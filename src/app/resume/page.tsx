@@ -94,13 +94,15 @@ export default function ResumePage() {
             {EXPERIENCES.map((exp, idx) => (
               <div key={idx} className="space-y-3 pb-6 border-b border-surface-border last:border-b-0 last:pb-0">
                 <div className="space-y-1">
-                  <h4 className="text-base sm:text-lg font-display font-bold text-ink-primary">
-                    {exp.role} — <span className="text-surface-forest">{exp.company}</span>
+                  <h4 className="text-base sm:text-lg font-display font-extrabold text-ink-primary tracking-tight">
+                    {exp.role}
                   </h4>
-                  <div className="flex flex-wrap items-center gap-2 text-xs font-mono text-ink-secondary">
-                    <span className="font-semibold text-ink-primary">{exp.period}</span>
-                    <span>•</span>
-                    <span>{exp.location}</span>
+                  <div className="flex flex-wrap items-center gap-2 text-xs font-mono">
+                    <span className="font-semibold text-surface-forest text-sm">{exp.company}</span>
+                    <span className="text-ink-muted">•</span>
+                    <span className="text-ink-secondary">{exp.period}</span>
+                    <span className="text-ink-muted">•</span>
+                    <span className="text-ink-muted">{exp.location}</span>
                   </div>
                 </div>
                 <ul className="space-y-1.5 text-xs sm:text-sm text-ink-secondary pl-4 list-disc marker:text-surface-forest">
