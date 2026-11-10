@@ -1,6 +1,20 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { FileDown, MapPin, Mail, Phone, Calendar, GraduationCap, ArrowRight, CheckCircle2 } from 'lucide-react';
+import Image from 'next/image';
+import {
+  FileDown,
+  MapPin,
+  Mail,
+  Phone,
+  GraduationCap,
+  ArrowRight,
+  CheckCircle2,
+  Sparkles,
+  Code2,
+  Cpu,
+  Layers,
+  Award,
+} from 'lucide-react';
 import { PERSONAL_INFO } from '@/data/portfolioData';
 
 export const metadata: Metadata = {
@@ -10,122 +24,171 @@ export const metadata: Metadata = {
 };
 
 export default function AboutPage() {
+  const corePrinciples = [
+    {
+      title: 'Business-First Engineering',
+      desc: 'Code is only as valuable as the real business outcome it delivers. Every architectural decision is evaluated on reliability, speed-to-market, and maintainability.',
+      icon: Layers,
+      tint: 'bg-pastel-lavender/50 text-indigo-900',
+    },
+    {
+      title: 'Full-Stack Fluidity',
+      desc: 'Seamlessly bridging high-performance Next.js/React frontends with rock-solid Laravel, PHP, and Node.js backend services and relational databases.',
+      icon: Code2,
+      tint: 'bg-pastel-peach/50 text-amber-900',
+    },
+    {
+      title: 'AI-Augmented Productivity',
+      desc: 'Integrating AI pair-programming, automated schema validation, and intelligent workflows to deliver enterprise-grade projects with 3x velocity.',
+      icon: Cpu,
+      tint: 'bg-accent-moss/30 text-forest-900',
+    },
+    {
+      title: 'Pixel-Precise Craft',
+      desc: 'Obsessive attention to Core Web Vitals, accessible semantic structure, fluid responsiveness, and ergonomic micro-interactions.',
+      icon: Award,
+      tint: 'bg-canvas-soft text-forest-900',
+    },
+  ];
+
   return (
-    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 space-y-16">
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 space-y-16">
       
-      {/* Header */}
-      <div className="border-b border-charcoal-800 pb-8 space-y-4">
-        <span className="text-xs font-mono tracking-widest text-lime-400 uppercase">
-          // Profile & Background
-        </span>
-        <h1 className="text-4xl sm:text-6xl font-display font-extrabold text-sand-50 tracking-tight">
+      {/* Header Section */}
+      <div className="border-b border-canvas-border pb-8 space-y-3">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-canvas-soft border border-canvas-border text-xs font-mono font-medium text-forest-800">
+          <Sparkles className="w-3.5 h-3.5 text-forest-700" />
+          <span>Profile & Professional Background</span>
+        </div>
+        <h1 className="text-4xl sm:text-6xl font-display font-extrabold text-ink-primary tracking-tight">
           About Arif Mahmood
         </h1>
-        <p className="text-xl font-mono text-lime-400 font-medium">
+        <p className="text-lg sm:text-xl font-mono text-forest-700 font-medium">
           {PERSONAL_INFO.roleTitle}
         </p>
       </div>
 
       {/* Main Bio Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
         
-        {/* Left Column: Narrative */}
-        <div className="lg:col-span-8 space-y-6 text-sm sm:text-base text-charcoal-300 leading-relaxed">
-          <p>
-            I am a senior AI-powered Full-Stack Developer with over <span className="text-sand-50 font-semibold">13 years of professional experience</span> architecting and delivering responsive websites, enterprise SaaS applications, and high-performance digital platforms.
-          </p>
-
-          <p>
-            My engineering expertise spans the full stack: modern reactive frontends with <span className="text-sand-50 font-semibold">React, Next.js, and TypeScript</span>, resilient backend architectures with <span className="text-sand-50 font-semibold">PHP, Laravel, Node.js, and Express</span>, as well as bespoke WordPress ecosystems (custom themes, plugins, and headless CMS integrations).
-          </p>
-
-          <p>
-            Over the course of my career—spanning leadership and developer roles at <span className="text-sand-50 font-semibold">Zam Solutions, Spearhead Technology, Irtifa Group, and Global Technology Coverage</span>—I have focused on delivering clean code, optimizing Core Web Vitals, and translating complex business requirements into intuitive user experiences.
-          </p>
-
-          <p>
-            Today, I leverage modern <span className="text-sand-50 font-semibold">AI-augmented development workflows</span> to accelerate prototyping, automate boilerplate tasks, and ensure high code quality across large-scale software projects.
-          </p>
+        {/* Left Column: Narrative & Experience Overview */}
+        <div className="lg:col-span-7 space-y-6 text-base sm:text-lg text-ink-secondary leading-relaxed">
+          <div className="p-6 rounded-3xl bg-canvas-pure border border-canvas-border shadow-elevated space-y-4">
+            <h2 className="text-xl font-display font-bold text-ink-primary">
+              13+ Years of Production Engineering
+            </h2>
+            <p className="text-base text-ink-secondary leading-relaxed">
+              I am a senior AI-powered Full-Stack Developer with over <strong className="text-ink-primary font-semibold">13 years of professional hands-on experience</strong> architecting, building, and deploying high-traffic web applications, custom enterprise software, and scalable SaaS platforms.
+            </p>
+            <p className="text-base text-ink-secondary leading-relaxed">
+              My engineering stack unites modern reactive frameworks (<strong className="text-ink-primary font-semibold">React, Next.js, TypeScript</strong>) with resilient backend ecosystems (<strong className="text-ink-primary font-semibold">PHP, Laravel, Node.js, Express, MySQL, PostgreSQL</strong>) and custom WordPress development (bespoke themes, custom plugin architecture, and headless CMS integrations).
+            </p>
+            <p className="text-base text-ink-secondary leading-relaxed">
+              Throughout my journey—leading and shipping software across organizations including <strong className="text-ink-primary font-semibold">Zam Solutions, Spearhead Technology, Irtifa Group, and Global Technology Coverage</strong>—I have held an unwavering focus on code quality, performance optimization, and clean architectural separation of concerns.
+            </p>
+          </div>
 
           {/* Education Block */}
-          <div className="pt-6 border-t border-charcoal-800 space-y-3">
-            <h2 className="text-xl font-display font-bold text-sand-50 flex items-center gap-2">
-              <GraduationCap className="w-5 h-5 text-lime-400" />
+          <div className="p-6 rounded-3xl bg-canvas-pure border border-canvas-border shadow-elevated space-y-4">
+            <h3 className="text-lg font-display font-bold text-ink-primary flex items-center gap-2.5">
+              <span className="p-2 rounded-xl bg-forest-900 text-accent-moss">
+                <GraduationCap className="w-5 h-5" />
+              </span>
               <span>Formal Education</span>
-            </h2>
-            <div className="p-5 rounded-2xl bg-charcoal-900 border border-charcoal-800 space-y-1">
-              <p className="text-sand-50 font-semibold text-base">{PERSONAL_INFO.education.degree}</p>
-              <p className="text-charcoal-400 text-xs font-mono">{PERSONAL_INFO.education.institution}</p>
-              <p className="text-lime-400 text-xs font-mono">{PERSONAL_INFO.education.years}</p>
+            </h3>
+            <div className="p-5 rounded-2xl bg-canvas-soft border border-canvas-border space-y-1">
+              <p className="text-ink-primary font-bold text-base">{PERSONAL_INFO.education.degree}</p>
+              <p className="text-ink-secondary text-sm font-mono">{PERSONAL_INFO.education.institution}</p>
+              <p className="text-forest-700 text-xs font-mono font-medium pt-1">{PERSONAL_INFO.education.years}</p>
             </div>
           </div>
         </div>
 
-        {/* Right Column: Fast Info Card & Real Portrait */}
-        <div className="lg:col-span-4 space-y-6">
-          <div className="bg-charcoal-900 border border-charcoal-800 rounded-3xl p-4 shadow-editorial overflow-hidden">
-            <div className="relative w-full aspect-[4/4.5] rounded-2xl overflow-hidden bg-charcoal-950 border border-charcoal-800">
-              <img
+        {/* Right Column: Real Portrait & Fast Info Card */}
+        <div className="lg:col-span-5 space-y-6">
+          <div className="bg-canvas-pure border border-canvas-border rounded-3xl p-3 sm:p-4 shadow-elevated overflow-hidden group">
+            <div className="relative w-full aspect-[4/4.8] rounded-2xl overflow-hidden bg-canvas-soft border border-canvas-border">
+              <Image
                 src={PERSONAL_INFO.aboutImageUrl}
-                alt="Arif Mahmood"
-                className="w-full h-full object-cover object-top"
+                alt="Arif Mahmood — Full-Stack Developer"
+                fill
+                sizes="(max-width: 768px) 100vw, 400px"
+                className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
+                priority
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-60" />
+              <div className="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-md p-3 rounded-xl border border-white/40 shadow-sm flex items-center justify-between">
+                <div>
+                  <p className="text-xs font-mono text-ink-secondary">Current Location</p>
+                  <p className="text-sm font-bold text-ink-primary flex items-center gap-1.5">
+                    <MapPin className="w-3.5 h-3.5 text-forest-700" />
+                    <span>{PERSONAL_INFO.location}</span>
+                  </p>
+                </div>
+                <span className="px-2.5 py-1 rounded-full bg-forest-900 text-accent-moss text-xs font-mono font-bold">
+                  13+ Yrs
+                </span>
+              </div>
             </div>
           </div>
 
-          <div className="bg-charcoal-900 border border-charcoal-800 rounded-2xl p-6 sm:p-7 space-y-6 shadow-editorial">
-            <p className="text-xs font-mono text-charcoal-400 uppercase tracking-wider">
-              Quick Facts
+          {/* Quick Facts Card */}
+          <div className="bg-canvas-pure border border-canvas-border rounded-3xl p-6 space-y-5 shadow-elevated">
+            <p className="text-xs font-mono text-forest-700 uppercase tracking-widest font-semibold">
+              // Professional Coordinates
             </p>
 
-            <div className="space-y-4 text-xs font-mono">
-              <div>
-                <span className="text-charcoal-500">Location</span>
-                <p className="text-sand-50 font-semibold mt-0.5">{PERSONAL_INFO.location}</p>
+            <div className="space-y-3.5 text-sm">
+              <div className="flex items-center justify-between pb-3 border-b border-canvas-border">
+                <span className="text-ink-secondary text-xs font-mono">Location</span>
+                <span className="text-ink-primary font-semibold">{PERSONAL_INFO.location}</span>
               </div>
 
-              <div>
-                <span className="text-charcoal-500">Experience</span>
-                <p className="text-sand-50 font-semibold mt-0.5">{PERSONAL_INFO.experienceYears} Years (Since 2013)</p>
+              <div className="flex items-center justify-between pb-3 border-b border-canvas-border">
+                <span className="text-ink-secondary text-xs font-mono">Experience</span>
+                <span className="text-ink-primary font-semibold">{PERSONAL_INFO.experienceYears} Years</span>
               </div>
 
-              <div>
-                <span className="text-charcoal-500">Primary Email</span>
-                <a href={`mailto:${PERSONAL_INFO.email}`} className="text-lime-400 font-semibold hover:underline block mt-0.5 break-all">
+              <div className="flex items-center justify-between pb-3 border-b border-canvas-border">
+                <span className="text-ink-secondary text-xs font-mono">Direct Email</span>
+                <a
+                  href={`mailto:${PERSONAL_INFO.email}`}
+                  className="text-forest-700 font-semibold hover:underline text-xs font-mono truncate max-w-[180px]"
+                >
                   {PERSONAL_INFO.email}
                 </a>
               </div>
 
-              <div>
-                <span className="text-charcoal-500">Phone / WhatsApp</span>
-                <p className="text-sand-50 font-semibold mt-0.5">{PERSONAL_INFO.phone}</p>
+              <div className="flex items-center justify-between pb-3 border-b border-canvas-border">
+                <span className="text-ink-secondary text-xs font-mono">Phone / WA</span>
+                <span className="text-ink-primary font-semibold text-xs font-mono">{PERSONAL_INFO.phone}</span>
               </div>
 
-              <div>
-                <span className="text-charcoal-500">Availability</span>
-                <p className="text-lime-400 font-semibold mt-0.5 flex items-center gap-1.5">
-                  <span className="w-2 h-2 rounded-full bg-lime-400 animate-pulse" />
-                  <span>Open to Remote & Contracts</span>
-                </p>
+              <div className="flex items-center justify-between pt-1">
+                <span className="text-ink-secondary text-xs font-mono">Status</span>
+                <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-accent-moss/30 border border-forest-600/30 text-forest-900 font-mono text-xs font-bold">
+                  <span className="w-2 h-2 rounded-full bg-forest-600 animate-pulse" />
+                  <span>Available for Hire</span>
+                </span>
               </div>
             </div>
 
-            <div className="pt-4 border-t border-charcoal-800 space-y-2">
+            <div className="pt-3 border-t border-canvas-border space-y-2.5">
               <a
                 href={PERSONAL_INFO.cvPath}
                 download={PERSONAL_INFO.cvFileName}
-                className="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-charcoal-950 hover:bg-charcoal-800 text-sand-50 border border-charcoal-700 text-xs font-mono transition-all"
+                className="w-full flex items-center justify-center gap-2 py-3 rounded-2xl bg-canvas-soft hover:bg-canvas text-ink-primary border border-canvas-border text-sm font-semibold transition-all shadow-sm"
               >
-                <FileDown className="w-4 h-4 text-lime-400" />
-                <span>Download CV (PDF)</span>
+                <FileDown className="w-4 h-4 text-forest-700" />
+                <span>Download Verified CV (PDF)</span>
               </a>
 
               <Link
                 href="/contact"
-                className="w-full flex items-center justify-center gap-1.5 py-3 rounded-xl bg-lime-400 hover:bg-lime-500 text-charcoal-950 font-bold text-xs tracking-tight transition-all shadow-lime-glow"
+                className="w-full flex items-center justify-center gap-2 py-3 rounded-2xl bg-forest-900 hover:bg-forest-800 text-white font-bold text-sm tracking-tight transition-all shadow-md"
               >
-                <span>Get in Touch</span>
-                <ArrowRight className="w-3.5 h-3.5" />
+                <span>Initiate Conversation</span>
+                <ArrowRight className="w-4 h-4 text-accent-moss" />
               </Link>
             </div>
           </div>
@@ -133,7 +196,40 @@ export default function AboutPage() {
 
       </div>
 
+      {/* Engineering Philosophy Bento Grid */}
+      <div className="space-y-6 pt-6">
+        <div className="space-y-1">
+          <span className="text-xs font-mono font-medium text-forest-700 uppercase tracking-widest">
+            // Core Principles
+          </span>
+          <h2 className="text-2xl sm:text-3xl font-display font-extrabold text-ink-primary tracking-tight">
+            How I Approach Software Development
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {corePrinciples.map((item, idx) => {
+            const Icon = item.icon;
+            return (
+              <div
+                key={idx}
+                className="p-6 sm:p-7 rounded-3xl bg-canvas-pure border border-canvas-border shadow-elevated space-y-3 transition-all hover:-translate-y-1"
+              >
+                <div className={`w-11 h-11 rounded-2xl ${item.tint} flex items-center justify-center`}>
+                  <Icon className="w-5 h-5" />
+                </div>
+                <h3 className="text-lg font-display font-bold text-ink-primary">
+                  {item.title}
+                </h3>
+                <p className="text-sm text-ink-secondary leading-relaxed">
+                  {item.desc}
+                </p>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
     </div>
   );
 }
-

@@ -11,37 +11,48 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        bg: {
-          dark: "#0B0D0F",
-          card: "#15191D",
-          cardHover: "#1C2127",
-          subtle: "#0F1215",
-          border: "#232A31",
-          borderSubtle: "#1B2127",
+        // Master Prompt Light Design System Palette
+        canvas: {
+          DEFAULT: "#F8F9F6", // Main background
+          pure: "#FFFFFF",    // Secondary / pure card background
+          soft: "#EEF2EA",    // Soft section background
+          border: "#E2E7DF",  // Subtle divider borders
+          borderSoft: "#ECEFEA",
+          dark: "#17251E",    // Dark contrast section background
+          darkCard: "#1D2D25",
         },
-        text: {
-          primary: "#F5F5F0",
-          secondary: "#9CA3AF",
-          muted: "#6B7280",
-          highlight: "#C6F36B",
+        ink: {
+          primary: "#202923",   // Primary typography
+          secondary: "#68736C", // Secondary typography
+          muted: "#8A948E",     // Micro labels & captions
+          inverse: "#F8F9F6",   // Text on dark sections
         },
         accent: {
-          DEFAULT: "#C6F36B",
-          hover: "#B6E759",
-          muted: "rgba(198, 243, 107, 0.12)",
-          border: "rgba(198, 243, 107, 0.28)",
-          glow: "rgba(198, 243, 107, 0.35)",
+          green: "#A7D46F",     // Accent green
+          greenHover: "#96C65D",
+          greenDark: "#315C45", // Accent dark green for badges & contrast
+          greenDarkHover: "#264835",
+          lavender: "#ECE9FA",  // Soft lavender pastel
+          lavenderBorder: "#DDD8F5",
+          peach: "#F8E8DD",     // Soft peach pastel
+          peachBorder: "#F2D8C7",
         },
       },
       fontFamily: {
-        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
+        sans: ["var(--font-inter)", "system-ui", "-apple-system", "sans-serif"],
         display: ["var(--font-syne)", "var(--font-inter)", "sans-serif"],
         mono: ["var(--font-jetbrains)", "monospace"],
       },
       boxShadow: {
-        bento: "0 20px 40px -15px rgba(0, 0, 0, 0.6)",
-        "accent-glow": "0 0 35px -5px rgba(198, 243, 107, 0.25)",
-        card: "0 10px 30px -10px rgba(0, 0, 0, 0.5)",
+        soft: "0 4px 20px -2px rgba(32, 41, 35, 0.04), 0 2px 6px -1px rgba(32, 41, 35, 0.02)",
+        card: "0 10px 30px -4px rgba(32, 41, 35, 0.06), 0 4px 12px -2px rgba(32, 41, 35, 0.03)",
+        elevated: "0 20px 40px -6px rgba(32, 41, 35, 0.08), 0 8px 16px -4px rgba(32, 41, 35, 0.04)",
+        glowGreen: "0 0 35px -5px rgba(167, 212, 111, 0.35)",
+        pill: "0 2px 10px rgba(32, 41, 35, 0.04)",
+      },
+      borderRadius: {
+        "3xl": "1.75rem",
+        "4xl": "2.25rem",
       },
     },
   },

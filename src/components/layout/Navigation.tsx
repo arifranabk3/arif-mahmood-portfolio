@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
@@ -12,7 +13,6 @@ import {
   Sparkles,
   Layers,
   Briefcase,
-  Terminal,
   Compass
 } from 'lucide-react';
 import { PERSONAL_INFO } from '@/data/portfolioData';
@@ -31,60 +31,65 @@ export const Navigation: React.FC = () => {
   }, []);
 
   const navLinks = [
-    { label: 'Work', href: '/#projects' },
-    { label: 'Expertise', href: '/#expertise' },
-    { label: 'Experience', href: '/#experience' },
-    { label: 'Clients', href: '/#client-work' },
+    { label: 'Work', href: '/projects' },
     { label: 'About', href: '/about' },
+    { label: 'Experience', href: '/experience' },
+    { label: 'Expertise', href: '/skills' },
+    { label: 'Client Work', href: '/client-work' },
+    { label: 'Services', href: '/services' },
+    { label: 'Resume', href: '/resume' },
     { label: 'Contact', href: '/contact' },
   ];
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-4 sm:px-6 lg:px-8 pt-4">
       <motion.div 
-        initial={{ y: -30, opacity: 0 }}
+        initial={{ y: -24, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
         className={`max-w-6xl mx-auto rounded-full transition-all duration-300 ${
           isScrolled 
-            ? 'bg-[#15191D]/85 backdrop-blur-xl border border-white/10 shadow-2xl py-2 px-4 sm:px-6' 
-            : 'bg-[#15191D]/50 backdrop-blur-md border border-white/5 py-3 px-5 sm:px-7'
+            ? 'glass-pure shadow-card py-2.5 px-5 sm:px-7 border border-canvas-border' 
+            : 'bg-canvas-pure/90 backdrop-blur-md shadow-soft py-3 px-5 sm:px-7 border border-canvas-borderSoft'
         }`}
       >
         <div className="flex items-center justify-between">
           
-          {/* Personal Monogram / Logo */}
+          {/* Personal Monogram / Logo with Actual Avatar */}
           <Link href="/" className="group flex items-center gap-3">
-            <div className="relative w-9 h-9 rounded-full overflow-hidden border border-white/15 group-hover:border-accent transition-colors flex-shrink-0">
-              <img
+            <div className="relative w-9 h-9 rounded-full overflow-hidden border border-canvas-border group-hover:border-accent-greenDark transition-colors flex-shrink-0 shadow-sm">
+              <Image
                 src={PERSONAL_INFO.avatarUrl}
                 alt="Arif Mahmood"
+                width={36}
+                height={36}
                 className="w-full h-full object-cover object-top"
+                priority
               />
             </div>
             <div className="flex flex-col">
-              <span className="font-display font-bold text-sm tracking-tight text-text-primary group-hover:text-accent transition-colors">
+              <span className="font-display font-bold text-sm tracking-tight text-ink-primary group-hover:text-accent-greenDark transition-colors">
                 Arif Mahmood
               </span>
-              <span className="text-[10px] font-mono text-text-secondary flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-                <span>Available for Q2/Q3 Roles</span>
+              <span className="text-[10px] font-mono text-ink-muted flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-accent-green animate-pulse" />
+                <span>13+ Yrs Exp · Available</span>
               </span>
             </div>
           </Link>
 
-          {/* Center Pill Navigation */}
-          <nav className="hidden md:flex items-center gap-1">
+          {/* Desktop Center Pill Navigation */}
+          <nav className="hidden lg:flex items-center gap-1 bg-canvas-soft/80 p-1 rounded-full border border-canvas-border">
             {navLinks.map((link) => {
-              const isActive = pathname === link.href;
+              const isActive = pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href));
               return (
                 <Link
                   key={link.label}
                   href={link.href}
                   className={`px-3.5 py-1.5 rounded-full text-xs font-medium transition-all ${
                     isActive
-                      ? 'bg-accent/15 text-accent border border-accent/30 font-semibold'
-                      : 'text-text-secondary hover:text-text-primary hover:bg-white/5'
+                      ? 'bg-canvas-pure text-accent-greenDark font-bold shadow-sm'
+                      : 'text-ink-secondary hover:text-ink-primary hover:bg-canvas-pure/50'
                   }`}
                 >
                   {link.label}
@@ -93,20 +98,20 @@ export const Navigation: React.FC = () => {
             })}
           </nav>
 
-          {/* Action Button: Download CV & Contact */}
+          {/* Action Buttons: CV & Contact */}
           <div className="hidden sm:flex items-center gap-2.5">
             <a
               href={PERSONAL_INFO.cvPath}
               download={PERSONAL_INFO.cvFileName}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 hover:bg-white/10 text-text-secondary hover:text-text-primary border border-white/10 text-xs font-mono transition-all"
+              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-canvas-soft hover:bg-canvas-border/70 text-ink-secondary hover:text-ink-primary border border-canvas-border text-xs font-mono font-medium transition-all"
             >
-              <FileDown className="w-3.5 h-3.5 text-accent" />
-              <span>CV</span>
+              <FileDown className="w-3.5 h-3.5 text-accent-greenDark" />
+              <span>CV (PDF)</span>
             </a>
 
             <Link
               href="/contact"
-              className="inline-flex items-center gap-1 px-4 py-1.5 rounded-full bg-accent hover:bg-accent-hover text-bg-dark font-bold text-xs tracking-tight transition-all shadow-sm hover:scale-[1.02]"
+              className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-accent-greenDark hover:bg-accent-greenDarkHover text-canvas-pure font-bold text-xs tracking-tight transition-all shadow-sm hover:scale-[1.02]"
             >
               <span>Let's Talk</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
@@ -116,7 +121,7 @@ export const Navigation: React.FC = () => {
           {/* Mobile Menu Hamburger */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="md:hidden p-2 rounded-full bg-white/5 border border-white/10 text-text-secondary hover:text-text-primary"
+            className="lg:hidden p-2 rounded-full bg-canvas-soft border border-canvas-border text-ink-secondary hover:text-ink-primary"
             aria-label="Toggle navigation"
           >
             {mobileOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
@@ -133,7 +138,7 @@ export const Navigation: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden mt-2 mx-auto max-w-sm rounded-2xl bg-bg-card border border-white/10 p-5 shadow-2xl space-y-4"
+            className="lg:hidden mt-2 mx-auto max-w-sm rounded-3xl bg-canvas-pure border border-canvas-border p-5 shadow-elevated space-y-4"
           >
             <div className="grid grid-cols-2 gap-2">
               {navLinks.map((link) => (
@@ -141,26 +146,30 @@ export const Navigation: React.FC = () => {
                   key={link.label}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className="px-3 py-2 rounded-xl text-xs font-medium text-text-secondary hover:text-text-primary hover:bg-white/5"
+                  className={`px-3 py-2 rounded-xl text-xs font-medium transition-colors ${
+                    pathname === link.href
+                      ? 'bg-accent-lavender text-accent-greenDark font-bold'
+                      : 'text-ink-secondary hover:text-ink-primary hover:bg-canvas-soft'
+                  }`}
                 >
                   {link.label}
                 </Link>
               ))}
             </div>
 
-            <div className="pt-3 border-t border-white/10 flex flex-col gap-2">
+            <div className="pt-3 border-t border-canvas-border flex flex-col gap-2">
               <a
                 href={PERSONAL_INFO.cvPath}
                 download={PERSONAL_INFO.cvFileName}
-                className="flex items-center justify-center gap-2 py-2.5 rounded-xl bg-white/5 border border-white/10 text-xs font-mono text-text-primary"
+                className="flex items-center justify-center gap-2 py-2.5 rounded-xl bg-canvas-soft border border-canvas-border text-xs font-mono text-ink-primary font-medium"
               >
-                <FileDown className="w-3.5 h-3.5 text-accent" />
-                <span>Download CV (PDF)</span>
+                <FileDown className="w-3.5 h-3.5 text-accent-greenDark" />
+                <span>Download Official CV (PDF)</span>
               </a>
               <Link
                 href="/contact"
                 onClick={() => setMobileOpen(false)}
-                className="flex items-center justify-center gap-1.5 py-2.5 rounded-xl bg-accent text-bg-dark font-bold text-xs"
+                className="flex items-center justify-center gap-1.5 py-2.5 rounded-xl bg-accent-greenDark text-canvas-pure font-bold text-xs shadow-sm"
               >
                 <span>Let's Talk</span>
                 <ArrowUpRight className="w-3.5 h-3.5" />

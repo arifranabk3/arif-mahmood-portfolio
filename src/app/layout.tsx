@@ -18,7 +18,7 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const viewport: Viewport = {
-  themeColor: '#090A0C',
+  themeColor: '#F8F9F6',
   width: 'device-width',
   initialScale: 1,
 };
@@ -26,11 +26,11 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://arifmahmood.dev'),
   title: {
-    default: 'Arif Mahmood — AI-Powered Full-Stack Developer (13+ Years Experience)',
+    default: 'Arif Mahmood — Senior AI-Powered Full-Stack Developer (13+ Years Experience)',
     template: '%s | Arif Mahmood Portfolio',
   },
   description:
-    'AI-Powered Full-Stack Developer with 13+ years of experience delivering responsive websites, scalable web applications, custom WordPress/Laravel solutions, and modern digital architectures.',
+    'Senior AI-Powered Full-Stack Developer with 13+ years of experience delivering responsive websites, scalable web applications, custom WordPress/Laravel solutions, and modern digital architectures.',
   keywords: [
     'Arif Mahmood',
     'Full-Stack Developer',
@@ -50,14 +50,14 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://arifmahmood.dev',
-    title: 'Arif Mahmood — AI-Powered Full-Stack Developer',
+    title: 'Arif Mahmood — Senior AI-Powered Full-Stack Developer',
     description:
       '13+ years of professional full-stack development experience delivering scalable web applications, WordPress systems, and bespoke digital software.',
     siteName: 'Arif Mahmood Portfolio',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Arif Mahmood — AI-Powered Full-Stack Developer',
+    title: 'Arif Mahmood — Senior AI-Powered Full-Stack Developer',
     description: '13+ years of experience in Full-Stack, WordPress, Next.js, and Laravel development.',
   },
   robots: {
@@ -75,7 +75,7 @@ export default function RootLayout({
     '@context': 'https://schema.org',
     '@type': 'Person',
     name: PERSONAL_INFO.name,
-    jobTitle: 'AI-Powered Full-Stack Developer',
+    jobTitle: 'Senior AI-Powered Full-Stack Developer',
     description: PERSONAL_INFO.shortBio,
     email: PERSONAL_INFO.email,
     telephone: PERSONAL_INFO.phone,
@@ -111,7 +111,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personStructuredData) }}
         />
       </head>
-      <body className="bg-[#090A0C] text-sand-50 font-sans antialiased min-h-screen flex flex-col selection:bg-lime-400 selection:text-charcoal-950">
+      <body className="bg-canvas text-ink-primary font-sans antialiased min-h-screen flex flex-col selection:bg-accent-green selection:text-canvas-dark">
         <Navigation />
         <main className="flex-1 pt-20">{children}</main>
         <Footer />

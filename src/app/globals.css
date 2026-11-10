@@ -4,22 +4,25 @@
 
 @layer base {
   :root {
-    --bg-dark: #0B0D0F;
-    --surface: #15191D;
-    --text-primary: #F5F5F0;
-    --text-secondary: #9CA3AF;
-    --accent: #C6F36B;
+    --canvas: #F8F9F6;
+    --canvas-pure: #FFFFFF;
+    --canvas-soft: #EEF2EA;
+    --canvas-dark: #17251E;
+    --ink-primary: #202923;
+    --ink-secondary: #68736C;
+    --accent-green: #A7D46F;
+    --accent-dark-green: #315C45;
   }
 
   html {
     scroll-behavior: smooth;
-    color-scheme: dark;
-    background-color: #0B0D0F;
+    color-scheme: light;
+    background-color: #F8F9F6;
   }
 
   body {
-    background-color: #0B0D0F;
-    color: #F5F5F0;
+    background-color: #F8F9F6;
+    color: #202923;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -27,45 +30,52 @@
   }
 
   ::selection {
-    background-color: #C6F36B;
-    color: #0B0D0F;
+    background-color: #A7D46F;
+    color: #17251E;
   }
 }
 
-/* Subtle Creative Mesh Dot Grid */
-.dot-grid {
-  background-image: radial-gradient(rgba(245, 245, 240, 0.07) 1px, transparent 1px);
-  background-size: 32px 32px;
+/* Warm Agency Dot Mesh */
+.light-dot-grid {
+  background-image: radial-gradient(rgba(32, 41, 35, 0.08) 1px, transparent 1px);
+  background-size: 28px 28px;
 }
 
-/* Linear Grid Overlay */
-.linear-grid {
-  background-size: 64px 64px;
+/* Subtle Organic Contour Lines */
+.light-linear-grid {
+  background-size: 56px 56px;
   background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    linear-gradient(to right, rgba(32, 41, 35, 0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(32, 41, 35, 0.025) 1px, transparent 1px);
 }
 
-/* Glassmorphism Surface */
-.glass-surface {
-  background: rgba(21, 25, 29, 0.72);
+/* Frosted Glass Navbar & Elements */
+.glass-light {
+  background: rgba(248, 249, 246, 0.85);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(226, 231, 223, 0.8);
 }
 
-/* Custom Scrollbar */
+.glass-pure {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(226, 231, 223, 0.6);
+}
+
+/* Custom Scrollbar for Warm Light Theme */
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 7px;
+  height: 7px;
 }
 ::-webkit-scrollbar-track {
-  background: #0B0D0F;
+  background: #F8F9F6;
 }
 ::-webkit-scrollbar-thumb {
-  background: #232A31;
+  background: #D5DCD2;
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #374151;
+  background: #B9C3B5;
 }
