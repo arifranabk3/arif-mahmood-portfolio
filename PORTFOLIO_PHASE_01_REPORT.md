@@ -90,7 +90,7 @@ Each project is featured with its honest lifecycle status, architectural decisio
 All client website references from the CV have been categorized into a dedicated page (`/client-work`) and highlighted on the homepage:
 
 - **Business & Corporate:**
-  - Ovexsol (`https://ovexsol.com`) — IT consulting corporate presence.
+  - OVEX IT Solutions (`https://ovexsol.com`) — IT consulting corporate presence.
   - Mumtaz Metal Care (`https://mumtazmetalcare.com`) — Industrial finishing services catalog.
   - KB FM (`https://kb-fm.co.uk`) — UK-based commercial facilities management.
   - Suisse Associates (`https://suisseassociates.com`) — Corporate advisory & asset consultancy.

@@ -355,7 +355,7 @@ export const PROJECTS: ProjectItem[] = [
 export const CLIENT_WEBSITES: ClientWebsite[] = [
   // Business & Corporate
   {
-    name: 'Ovexsol',
+    name: 'OVEX IT Solutions',
     url: 'https://ovexsol.com',
     category: 'Business & Corporate',
     description: 'Corporate technology solutions and IT consulting corporate presence.',
