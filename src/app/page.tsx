@@ -261,7 +261,7 @@ export default function RedesignedLightHomePage() {
       {/* =========================================================================
           03 — FEATURED PROJECTS: Alternating Light Neutral and Deep Charcoal Surfaces
       ========================================================================= */}
-      <section id="projects" className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-16">
+      <section id="projects" className="pt-20 sm:pt-28 pb-10 sm:pb-14 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-16">
         
         {/* Section Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 border-b border-surface-border pb-8">
@@ -492,7 +492,7 @@ export default function RedesignedLightHomePage() {
       {/* =========================================================================
           04 — EXPERTISE BENTO GRID: Warm Neutral Bento Layout
       ========================================================================= */}
-      <section id="expertise" className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-12">
+      <section id="expertise" className="pt-10 sm:pt-14 pb-20 sm:pb-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-12">
         
         <div className="space-y-3 border-b border-surface-border pb-8">
           <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-ink-forest font-bold">
