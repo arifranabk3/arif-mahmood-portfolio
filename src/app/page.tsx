@@ -1,402 +1,650 @@
+'use client';
+
 import React from 'react';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 import { 
+  ArrowRight, 
   ArrowUpRight, 
   FileDown, 
-  CheckCircle2, 
-  Terminal, 
-  Cpu, 
-  Globe, 
-  Layers, 
-  ExternalLink, 
-  Code2 as Github, 
   Sparkles, 
-  TrendingUp, 
-  Briefcase, 
-  ArrowRight
+  Terminal, 
+  Layers, 
+  CheckCircle2, 
+  Code2, 
+  ExternalLink,
+  Cpu,
+  Workflow,
+  Laptop,
+  Palette,
+  Boxes,
+  MapPin,
+  Calendar,
+  Send,
+  ShieldCheck,
+  TrendingUp,
+  MousePointer2,
+  ChevronDown
 } from 'lucide-react';
 import { 
   PERSONAL_INFO, 
   PROJECTS, 
   EXPERIENCES, 
-  SKILL_CATEGORIES, 
-  CLIENT_WEBSITES, 
-  SERVICES 
+  CLIENT_WEBSITES,
+  ProjectItem
 } from '@/data/portfolioData';
+import { Variants } from 'framer-motion';
 
-export default function HomePage() {
-  const featuredProjects = PROJECTS.filter((p) => p.featured);
-  const selectedClientSites = CLIENT_WEBSITES.slice(0, 6);
+// Animation variants respecting prefers-reduced-motion
+const fadeIn: Variants = {
+  hidden: { opacity: 0, y: 24 },
+  visible: (i: number = 0) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      delay: i * 0.1,
+      ease: 'easeOut',
+    },
+  }),
+};
+
+export default function RedesignedHomePage() {
+  const featuredProjects = PROJECTS.slice(0, 3);
+  const selectedClients = CLIENT_WEBSITES.slice(0, 6);
 
   return (
-    <div className="space-y-24 sm:space-y-32 pb-24">
+    <div className="relative overflow-hidden bg-bg-dark text-text-primary selection:bg-accent selection:text-bg-dark">
       
-      {/* =========================================================================
-          HERO SECTION — Editorial Asymmetric Composition
-      ========================================================================= */}
-      <section className="relative pt-12 pb-20 lg:pt-20 lg:pb-28 overflow-hidden border-b border-charcoal-800">
-        
-        {/* Ambient Subtle Grid & Radial Glow */}
-        <div className="absolute inset-0 editorial-grid pointer-events-none opacity-40" />
-        <div className="absolute top-1/4 right-10 w-[500px] h-[500px] bg-lime-400/5 rounded-full blur-[140px] pointer-events-none" />
+      {/* Background Interactive Ambient Atmosphere */}
+      <div className="absolute inset-0 dot-grid pointer-events-none opacity-40" />
+      <div className="absolute top-0 right-1/4 w-[650px] h-[650px] bg-accent/5 rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute top-[40%] left-[-150px] w-[500px] h-[500px] bg-emerald-500/5 rounded-full blur-[140px] pointer-events-none" />
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
-          {/* Eyebrow Pill */}
-          <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-charcoal-900 border border-charcoal-700 text-xs font-mono text-charcoal-300 mb-8">
-            <span className="w-2 h-2 rounded-full bg-lime-400 animate-pulse" />
-            <span className="text-sand-50 font-semibold">{PERSONAL_INFO.experienceYears} Years</span>
-            <span className="text-charcoal-500">/</span>
-            <span>AI-Augmented Full-Stack Engineering</span>
+      {/* =========================================================================
+          02 — HERO SECTION: Extraordinary Above-the-Fold Creative Presentation
+      ========================================================================= */}
+      <section className="relative min-h-[92vh] flex flex-col justify-between pt-28 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        
+        {/* Top Badges */}
+        <motion.div 
+          custom={0}
+          initial="hidden"
+          animate="visible"
+          variants={fadeIn}
+          className="flex flex-wrap items-center gap-3 pt-6 sm:pt-8"
+        >
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-bg-card border border-white/10 text-xs font-mono text-text-secondary">
+            <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+            <span className="text-text-primary font-semibold">Arif Mahmood</span>
+            <span className="text-white/20">/</span>
+            <span>AI-Powered Full-Stack Developer</span>
           </div>
 
-          {/* Main Editorial Headline & Asymmetric Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            <div className="lg:col-span-7 space-y-6">
-              <h1 className="text-4xl sm:text-6xl lg:text-7xl font-display font-extrabold text-sand-50 tracking-tight leading-[1.06]">
-                Building Digital Products That Solve{' '}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-lime-400 via-lime-300 to-emerald-400">
-                  Real Business Problems.
+          <div className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-text-secondary">
+            <MapPin className="w-3.5 h-3.5 text-accent" />
+            <span>Islamabad, Pakistan · Remote Worldwide</span>
+          </div>
+        </motion.div>
+
+        {/* Main Hero Typography & Portrait Composition */}
+        <div className="my-auto py-8 sm:py-12 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          
+          {/* Left Column: Oversized Expressive Headline */}
+          <div className="lg:col-span-7 space-y-6 sm:space-y-8">
+            <motion.div
+              custom={1}
+              initial="hidden"
+              animate="visible"
+              variants={fadeIn}
+            >
+              <h1 className="text-5xl sm:text-7xl lg:text-8xl font-display font-extrabold tracking-tight leading-[0.98] uppercase">
+                Building <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-text-primary via-sand-200 to-text-secondary">
+                  Digital
+                </span> <br />
+                <span className="relative inline-block">
+                  Experiences
+                  <span className="absolute -bottom-2 left-0 w-full h-2 bg-accent/30 rounded-full" />
+                </span> <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent via-accent-hover to-emerald-400">
+                  That Matter.
                 </span>
               </h1>
+            </motion.div>
 
-              <p className="text-lg sm:text-xl text-charcoal-300 leading-relaxed max-w-2xl font-normal">
-                {PERSONAL_INFO.supportingText}
-              </p>
+            <motion.p 
+              custom={2}
+              initial="hidden"
+              animate="visible"
+              variants={fadeIn}
+              className="text-base sm:text-lg text-text-secondary max-w-xl leading-relaxed"
+            >
+              I am Arif Mahmood, a Senior Full-Stack Engineer with 13+ years of experience delivering scalable web applications, custom WordPress ecosystems, and modern digital architectures augmented with AI workflows.
+            </motion.p>
 
-              {/* CTAs */}
-              <div className="pt-4 flex flex-wrap items-center gap-4">
-                <Link
-                  href="/projects"
-                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-lime-400 hover:bg-lime-500 text-charcoal-950 font-bold text-sm tracking-tight transition-all shadow-lime-glow hover:translate-y-[-1px]"
-                >
-                  <span>Explore My Work</span>
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
+            {/* CTAs */}
+            <motion.div 
+              custom={3}
+              initial="hidden"
+              animate="visible"
+              variants={fadeIn}
+              className="flex flex-wrap items-center gap-4 pt-2"
+            >
+              <a
+                href="#projects"
+                className="group inline-flex items-center gap-2.5 px-7 py-4 rounded-full bg-accent hover:bg-accent-hover text-bg-dark font-display font-bold text-sm tracking-tight transition-all duration-300 shadow-accent-glow hover:scale-[1.02]"
+              >
+                <span>Explore My Work</span>
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </a>
 
-                <a
-                  href={PERSONAL_INFO.cvPath}
-                  download={PERSONAL_INFO.cvFileName}
-                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-charcoal-900 hover:bg-charcoal-800 text-sand-50 border border-charcoal-700 hover:border-charcoal-600 font-mono text-xs transition-all"
-                >
-                  <FileDown className="w-4 h-4 text-lime-400" />
-                  <span>Download CV</span>
-                </a>
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 px-6 py-4 rounded-full bg-bg-card hover:bg-white/10 text-text-primary border border-white/10 hover:border-white/20 font-mono text-xs transition-all"
+              >
+                <span>Let's Talk</span>
+                <ArrowUpRight className="w-3.5 h-3.5 text-accent" />
+              </Link>
 
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-transparent hover:bg-charcoal-900 text-charcoal-300 hover:text-sand-50 font-medium text-xs border border-transparent hover:border-charcoal-700 transition-all"
-                >
-                  <span>Let’s Work Together</span>
-                  <ArrowUpRight className="w-3.5 h-3.5 text-lime-400" />
-                </Link>
-              </div>
-            </div>
-
-            {/* Professional Portrait & Interactive Profile Card */}
-            <div className="lg:col-span-5 space-y-6">
-              
-              {/* Image Frame with Editorial Lime Accent */}
-              <div className="relative group mx-auto max-w-sm lg:max-w-none">
-                <div className="absolute -inset-1.5 rounded-3xl bg-gradient-to-tr from-lime-400/40 via-emerald-400/20 to-transparent blur-lg opacity-70 group-hover:opacity-100 transition duration-500" />
-                
-                <div className="relative bg-charcoal-900 border border-charcoal-700 rounded-3xl p-3 overflow-hidden shadow-editorial">
-                  <div className="relative w-full aspect-[4/4.5] sm:aspect-[4/4.2] rounded-2xl overflow-hidden bg-charcoal-950">
-                    <img
-                      src={PERSONAL_INFO.avatarUrl}
-                      alt="Arif Mahmood — AI-Powered Full-Stack Developer"
-                      className="w-full h-full object-cover object-top filter brightness-[1.02] contrast-[1.03] group-hover:scale-[1.02] transition-transform duration-500"
-                    />
-                    
-                    {/* Floating Status Badge */}
-                    <div className="absolute bottom-3 left-3 right-3 p-3 rounded-xl bg-[#090A0C]/90 backdrop-blur-md border border-charcoal-700/80 flex items-center justify-between">
-                      <div className="flex items-center gap-2.5">
-                        <span className="w-2.5 h-2.5 rounded-full bg-lime-400 animate-pulse" />
-                        <div>
-                          <p className="text-xs font-display font-bold text-sand-50">Arif Mahmood</p>
-                          <p className="text-[10px] font-mono text-charcoal-400">Islamabad, PK · Available for Hire</p>
-                        </div>
-                      </div>
-                      <span className="text-[11px] font-mono font-bold text-lime-400 bg-charcoal-900 px-2 py-0.5 rounded border border-charcoal-700">
-                        13+ Yrs
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Quick Metrics Terminal */}
-              <div className="bg-charcoal-900/90 border border-charcoal-800 rounded-2xl p-5 space-y-4 shadow-editorial backdrop-blur">
-                <div className="flex items-center justify-between border-b border-charcoal-800 pb-3">
-                  <div className="flex items-center gap-2">
-                    <div className="w-2.5 h-2.5 rounded-full bg-red-500/80" />
-                    <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/80" />
-                    <div className="w-2.5 h-2.5 rounded-full bg-green-500/80" />
-                  </div>
-                  <span className="font-mono text-[10px] text-charcoal-400 uppercase tracking-widest">
-                    verified_engineer.sys
-                  </span>
-                </div>
-
-                <div className="grid grid-cols-2 gap-3 text-center">
-                  <div className="p-3 bg-charcoal-950/60 rounded-xl border border-charcoal-800">
-                    <p className="text-2xl font-display font-extrabold text-lime-400">13+</p>
-                    <p className="text-[10px] font-mono text-charcoal-400 uppercase mt-0.5">Years Experience</p>
-                  </div>
-                  <div className="p-3 bg-charcoal-950/60 rounded-xl border border-charcoal-800">
-                    <p className="text-2xl font-display font-extrabold text-sand-50">08</p>
-                    <p className="text-[10px] font-mono text-charcoal-400 uppercase mt-0.5">Software Assets</p>
-                  </div>
-                </div>
-              </div>
-
-            </div>
+              <a
+                href={PERSONAL_INFO.cvPath}
+                download={PERSONAL_INFO.cvFileName}
+                className="inline-flex items-center gap-2 px-5 py-4 rounded-full bg-transparent hover:bg-white/5 text-text-secondary hover:text-text-primary font-mono text-xs transition-all"
+              >
+                <FileDown className="w-3.5 h-3.5 text-accent" />
+                <span>Resume (PDF)</span>
+              </a>
+            </motion.div>
           </div>
 
+          {/* Right Column: Hero Interactive Bento Card with Actual Portrait */}
+          <motion.div 
+            custom={2}
+            initial="hidden"
+            animate="visible"
+            variants={fadeIn}
+            className="lg:col-span-5"
+          >
+            <div className="relative group max-w-md mx-auto lg:max-w-none">
+              {/* Creative Glow Halo */}
+              <div className="absolute -inset-1 rounded-3xl bg-gradient-to-tr from-accent/25 via-emerald-400/10 to-transparent blur-xl opacity-60 group-hover:opacity-100 transition duration-500" />
+              
+              <div className="relative bg-bg-card border border-white/10 rounded-3xl p-4 sm:p-5 shadow-2xl backdrop-blur-xl space-y-4">
+                
+                {/* Visual Image Presentation */}
+                <div className="relative aspect-[4/4.3] w-full rounded-2xl overflow-hidden bg-bg-dark border border-white/5">
+                  <img
+                    src={PERSONAL_INFO.avatarUrl}
+                    alt="Arif Mahmood — AI-Powered Full-Stack Developer"
+                    className="w-full h-full object-cover object-top filter brightness-[1.03] contrast-[1.02] group-hover:scale-[1.02] transition-transform duration-500"
+                  />
+                  
+                  {/* Floating Glass Meta Pill */}
+                  <div className="absolute bottom-3 left-3 right-3 p-3 rounded-xl bg-[#0B0D0F]/80 backdrop-blur-md border border-white/10 flex items-center justify-between">
+                    <div>
+                      <p className="text-xs font-display font-bold text-text-primary">Arif Mahmood</p>
+                      <p className="text-[10px] font-mono text-text-secondary">Islamabad, PK · Senior Engineer</p>
+                    </div>
+                    <span className="text-[11px] font-mono font-bold text-accent bg-white/5 px-2.5 py-1 rounded-lg border border-accent/20">
+                      13+ Yrs
+                    </span>
+                  </div>
+                </div>
+
+                {/* Micro Metric Ticker */}
+                <div className="grid grid-cols-2 gap-3 pt-1">
+                  <div className="p-3.5 rounded-xl bg-bg-dark/80 border border-white/5 text-center">
+                    <p className="text-2xl font-display font-extrabold text-accent">13+</p>
+                    <p className="text-[10px] font-mono text-text-secondary uppercase tracking-wider mt-0.5">Years Experience</p>
+                  </div>
+                  <div className="p-3.5 rounded-xl bg-bg-dark/80 border border-white/5 text-center">
+                    <p className="text-2xl font-display font-extrabold text-text-primary">08</p>
+                    <p className="text-[10px] font-mono text-text-secondary uppercase tracking-wider mt-0.5">Software Assets</p>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </motion.div>
+
         </div>
+
+        {/* Animated Scroll Indicator */}
+        <motion.div 
+          custom={4}
+          initial="hidden"
+          animate="visible"
+          variants={fadeIn}
+          className="flex items-center justify-between pt-4 border-t border-white/5 text-xs font-mono text-text-muted"
+        >
+          <div className="flex items-center gap-2">
+            <span className="w-1.5 h-1.5 rounded-full bg-accent animate-ping" />
+            <span>Next.js App Router · TypeScript · Tailwind CSS</span>
+          </div>
+
+          <a 
+            href="#projects" 
+            className="flex items-center gap-1.5 text-text-secondary hover:text-accent transition-colors"
+          >
+            <span>Scroll to explore</span>
+            <ChevronDown className="w-3.5 h-3.5 animate-bounce" />
+          </a>
+        </motion.div>
+
       </section>
 
       {/* =========================================================================
-          FEATURED SOFTWARE PROJECTS (Live & In-Dev Platforms)
+          03 — FEATURED PROJECTS: Oversized Case-Study Cards (Alternating Layouts)
       ========================================================================= */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 border-b border-charcoal-800 pb-6">
-          <div className="space-y-2">
-            <span className="text-xs font-mono tracking-widest text-lime-400 uppercase">
-              // Proven Engineering Capability
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-display font-extrabold text-sand-50 tracking-tight">
-              Featured Software Projects
+      <section id="projects" className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-16">
+        
+        {/* Section Header */}
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 border-b border-white/10 pb-8">
+          <div className="space-y-3">
+            <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-accent">
+              <span>// 03 — Verified Engineering Assets</span>
+            </div>
+            <h2 className="text-4xl sm:text-6xl font-display font-extrabold tracking-tight uppercase">
+              Featured Case Studies
             </h2>
-            <p className="text-sm text-charcoal-400 max-w-xl">
-              Independent SaaS platforms, automotive marketplaces, and recruitment software engineered from database to interface.
+            <p className="text-sm sm:text-base text-text-secondary max-w-2xl leading-relaxed">
+              Production-grade automotive marketplaces, multi-tenant digital commerce, and corporate applicant tracking systems engineered from architecture to interface.
             </p>
           </div>
 
           <Link
             href="/projects"
-            className="inline-flex items-center gap-1.5 text-xs font-mono text-lime-400 hover:text-lime-300 font-semibold"
+            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-mono text-accent hover:text-text-primary transition-all self-start sm:self-auto"
           >
-            <span>View All 8 Case Studies</span>
+            <span>View All 8 Platforms</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </Link>
         </div>
 
-        {/* Asymmetrical Project Cards */}
-        <div className="space-y-10">
-          {featuredProjects.map((project, idx) => (
-            <div
-              key={project.id}
-              className={`group bg-charcoal-900 border border-charcoal-800 hover:border-charcoal-700 rounded-3xl p-6 sm:p-10 transition-all shadow-editorial ${
-                idx % 2 === 1 ? 'lg:flex-row-reverse' : ''
-              }`}
-            >
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-                
-                {/* Left/Right Text Specs */}
-                <div className="lg:col-span-7 space-y-6">
+        {/* Oversized Alternating Project Showcases */}
+        <div className="space-y-16 sm:space-y-24">
+          {featuredProjects.map((project, idx) => {
+            const isReversed = idx % 2 === 1;
+
+            return (
+              <motion.article
+                key={project.id}
+                initial={{ opacity: 0, y: 32 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-80px' }}
+                transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                className="group relative rounded-3xl bg-bg-card border border-white/10 hover:border-white/20 p-6 sm:p-10 lg:p-12 transition-all duration-300 shadow-2xl overflow-hidden"
+              >
+                {/* Subtle Card Ambient Glow */}
+                <div className="absolute top-0 right-0 w-80 h-80 bg-accent/5 rounded-full blur-3xl pointer-events-none group-hover:bg-accent/10 transition-colors" />
+
+                <div className={`grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center ${isReversed ? 'lg:flex-row-reverse' : ''}`}>
                   
-                  <div className="flex flex-wrap items-center gap-3">
-                    <span className="font-mono text-xs font-bold text-lime-400 px-2.5 py-1 rounded-md bg-charcoal-950 border border-charcoal-800">
-                      PROJECT {project.number}
-                    </span>
-                    <span
-                      className={`text-[11px] font-mono px-2.5 py-0.5 rounded-full font-semibold uppercase tracking-wider ${
-                        project.status === 'Live'
-                          ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/30'
-                          : project.status === 'Development'
-                          ? 'bg-amber-500/10 text-amber-400 border border-amber-500/30'
-                          : 'bg-charcoal-800 text-charcoal-400 border border-charcoal-700'
-                      }`}
-                    >
-                      ● {project.status}
-                    </span>
-                    <span className="text-xs font-mono text-charcoal-400">
-                      {project.category}
-                    </span>
-                  </div>
-
-                  <div>
-                    <h3 className="text-2xl sm:text-3xl font-display font-bold text-sand-50 group-hover:text-lime-400 transition-colors">
-                      {project.title}
-                    </h3>
-                    <p className="text-sm font-mono text-charcoal-400 mt-1">
-                      {project.tagline}
-                    </p>
-                  </div>
-
-                  <p className="text-sm sm:text-base text-charcoal-300 leading-relaxed">
-                    {project.description}
-                  </p>
-
-                  {/* Highlights */}
-                  <div className="space-y-2">
-                    <p className="text-xs font-mono uppercase text-charcoal-400 tracking-wider">
-                      Core Implemented Architecture:
-                    </p>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-charcoal-300">
-                      {project.features.slice(0, 4).map((f, i) => (
-                        <div key={i} className="flex items-start gap-2">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-lime-400 flex-shrink-0 mt-0.5" />
-                          <span>{f}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Tech Stack Tags */}
-                  <div className="flex flex-wrap gap-2 pt-2">
-                    {project.techStack.map((tech) => (
-                      <span
-                        key={tech}
-                        className="px-2.5 py-1 rounded-lg bg-charcoal-950 border border-charcoal-800 text-[11px] font-mono text-charcoal-300"
-                      >
-                        {tech}
+                  {/* Text Specs & Narrative */}
+                  <div className={`lg:col-span-6 space-y-6 ${isReversed ? 'lg:order-2' : 'lg:order-1'}`}>
+                    
+                    {/* Status & Category */}
+                    <div className="flex flex-wrap items-center gap-3">
+                      <span className="font-mono text-xs font-bold text-accent bg-bg-dark px-3 py-1 rounded-md border border-white/10">
+                        CASE 0{idx + 1}
                       </span>
-                    ))}
-                  </div>
-
-                  {/* CTAs */}
-                  <div className="flex flex-wrap items-center gap-4 pt-3">
-                    <Link
-                      href={`/projects/${project.slug}`}
-                      className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-charcoal-800 hover:bg-charcoal-700 text-sand-50 font-mono text-xs font-medium transition-all"
-                    >
-                      <span>Read Case Study</span>
-                      <ArrowRight className="w-3.5 h-3.5 text-lime-400" />
-                    </Link>
-
-                    {project.liveUrl && (
-                      <a
-                        href={project.liveUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-lime-400 hover:bg-lime-500 text-charcoal-950 font-bold text-xs transition-all shadow-lime-glow"
+                      <span
+                        className={`text-[11px] font-mono px-3 py-0.5 rounded-full font-semibold uppercase tracking-wider ${
+                          project.status === 'Live'
+                            ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/30'
+                            : project.status === 'Development'
+                            ? 'bg-amber-500/10 text-amber-400 border border-amber-500/30'
+                            : 'bg-white/5 text-text-secondary border border-white/10'
+                        }`}
                       >
-                        <span>Launch Live App</span>
-                        <ExternalLink className="w-3.5 h-3.5" />
-                      </a>
-                    )}
+                        ● {project.status}
+                      </span>
+                      <span className="text-xs font-mono text-text-secondary">
+                        {project.category}
+                      </span>
+                    </div>
 
-                    {project.githubUrl && (
-                      <a
-                        href={project.githubUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl bg-charcoal-950 hover:bg-charcoal-800 text-charcoal-300 hover:text-sand-50 border border-charcoal-800 text-xs font-mono transition-all"
-                      >
-                        <Github className="w-3.5 h-3.5" />
-                        <span>Source Code</span>
-                      </a>
-                    )}
-                  </div>
+                    <div>
+                      <h3 className="text-3xl sm:text-5xl font-display font-extrabold tracking-tight text-text-primary group-hover:text-accent transition-colors">
+                        {project.title}
+                      </h3>
+                      <p className="text-sm font-mono text-text-secondary mt-1">
+                        {project.tagline}
+                      </p>
+                    </div>
 
-                </div>
-
-                {/* Right Interactive Mock Display */}
-                <div className="lg:col-span-5 bg-charcoal-950 border border-charcoal-800 rounded-2xl p-6 sm:p-8 space-y-6">
-                  <div className="space-y-4">
-                    <p className="text-xs font-mono text-charcoal-400 uppercase tracking-wider">
-                      Technical Verification
+                    <p className="text-sm sm:text-base text-text-secondary leading-relaxed">
+                      {project.description}
                     </p>
-                    <div className="space-y-3">
-                      {project.metrics?.map((m, i) => (
-                        <div
-                          key={i}
-                          className="flex items-center justify-between p-3 rounded-xl bg-charcoal-900 border border-charcoal-800 text-xs font-mono"
+
+                    {/* Architectural Highlights */}
+                    <div className="space-y-2.5 pt-2">
+                      <p className="text-xs font-mono uppercase text-text-muted tracking-wider">
+                        Verified Implementation:
+                      </p>
+                      <div className="space-y-1.5 text-xs text-text-secondary">
+                        {project.features.slice(0, 3).map((f, fIdx) => (
+                          <div key={fIdx} className="flex items-start gap-2.5">
+                            <CheckCircle2 className="w-3.5 h-3.5 text-accent flex-shrink-0 mt-0.5" />
+                            <span>{f}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Tech Stack Pills */}
+                    <div className="flex flex-wrap gap-2 pt-2">
+                      {project.techStack.map((tech) => (
+                        <span
+                          key={tech}
+                          className="px-3 py-1 rounded-lg bg-bg-dark border border-white/5 text-xs font-mono text-text-secondary"
                         >
-                          <span className="text-charcoal-400">{m.label}</span>
-                          <span className="text-sand-50 font-bold">{m.value}</span>
-                        </div>
+                          {tech}
+                        </span>
                       ))}
+                    </div>
+
+                    {/* CTAs */}
+                    <div className="flex flex-wrap items-center gap-3 pt-4">
+                      <Link
+                        href={`/projects/${project.slug}`}
+                        className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-accent hover:bg-accent-hover text-bg-dark font-display font-bold text-xs tracking-tight transition-all shadow-sm"
+                      >
+                        <span>View Project Case Study</span>
+                        <ArrowRight className="w-3.5 h-3.5" />
+                      </Link>
+
+                      {project.liveUrl && (
+                        <a
+                          href={project.liveUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 px-4 py-3 rounded-full bg-white/5 hover:bg-white/10 text-text-primary border border-white/10 text-xs font-mono transition-all"
+                        >
+                          <span>Live Deployment</span>
+                          <ExternalLink className="w-3.5 h-3.5 text-accent" />
+                        </a>
+                      )}
+                    </div>
+
+                  </div>
+
+                  {/* Right Column: Visual Preview Representation */}
+                  <div className={`lg:col-span-6 ${isReversed ? 'lg:order-1' : 'lg:order-2'}`}>
+                    <div className="relative rounded-2xl bg-bg-dark border border-white/10 p-5 sm:p-7 space-y-5 shadow-inner">
+                      
+                      {/* Browser Window Chrome */}
+                      <div className="flex items-center justify-between border-b border-white/5 pb-3">
+                        <div className="flex items-center gap-2">
+                          <div className="w-3 h-3 rounded-full bg-red-500/80" />
+                          <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
+                          <div className="w-3 h-3 rounded-full bg-green-500/80" />
+                        </div>
+                        <span className="font-mono text-[10px] text-text-muted">
+                          {project.slug}.internal.sys
+                        </span>
+                      </div>
+
+                      {/* Mock Interactive Architecture Screen */}
+                      <div className="aspect-[16/10] rounded-xl bg-[#0E1114] border border-white/5 p-5 flex flex-col justify-between">
+                        <div className="space-y-3">
+                          <div className="flex items-center justify-between">
+                            <span className="text-xs font-mono text-accent uppercase tracking-wider font-semibold">
+                              Architecture Blueprint
+                            </span>
+                            <span className="text-[10px] font-mono text-text-muted">
+                              Isolated Monorepo
+                            </span>
+                          </div>
+
+                          <div className="space-y-2 text-xs font-mono text-text-secondary">
+                            {project.architecture.map((arch, aIdx) => (
+                              <div key={aIdx} className="flex items-start gap-2">
+                                <span className="text-accent">▹</span>
+                                <span className="line-clamp-1">{arch}</span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+
+                        {/* Bottom Metric Badges */}
+                        <div className="grid grid-cols-2 gap-2 pt-4 border-t border-white/5">
+                          {project.metrics?.slice(0, 2).map((m, mIdx) => (
+                            <div key={mIdx} className="p-2.5 rounded-lg bg-bg-card/70 border border-white/5">
+                              <p className="text-[10px] font-mono text-text-muted">{m.label}</p>
+                              <p className="text-xs font-mono font-bold text-text-primary mt-0.5">{m.value}</p>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
                     </div>
                   </div>
 
-                  <div className="p-4 rounded-xl bg-charcoal-900/50 border border-charcoal-800 text-xs text-charcoal-400 space-y-2">
-                    <p className="text-sand-50 font-mono font-semibold">Strict Project Isolation</p>
-                    <p className="text-[11px] leading-relaxed">
-                      Independent codebase, dedicated MongoDB database, and isolated Next.js deployment.
-                    </p>
-                  </div>
                 </div>
-
-              </div>
-            </div>
-          ))}
+              </motion.article>
+            );
+          })}
         </div>
+
       </section>
 
       {/* =========================================================================
-          CAREER TIMELINE & PROVEN HISTORY
+          04 — EXPERTISE BENTO GRID: Unique Visual Treatment per Domain Card
       ========================================================================= */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 border-b border-charcoal-800 pb-6">
-          <div className="space-y-2">
-            <span className="text-xs font-mono tracking-widest text-lime-400 uppercase">
-              // Continuous Professional Journey
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-display font-extrabold text-sand-50 tracking-tight">
-              13+ Years of Career Experience
+      <section id="expertise" className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-12">
+        
+        <div className="space-y-3 border-b border-white/10 pb-8">
+          <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-accent">
+            <span>// 04 — Core Competencies</span>
+          </div>
+          <h2 className="text-4xl sm:text-6xl font-display font-extrabold tracking-tight uppercase">
+            Engineering Expertise
+          </h2>
+          <p className="text-sm sm:text-base text-text-secondary max-w-xl">
+            Specialized engineering capabilities across frontend performance, robust backend APIs, headless content platforms, and AI-assisted workflows.
+          </p>
+        </div>
+
+        {/* Bento Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
+          
+          {/* Bento Card 1: Full-Stack Web Development (Span 7) */}
+          <div className="md:col-span-7 rounded-3xl bg-bg-card border border-white/10 p-8 flex flex-col justify-between space-y-6 hover:border-white/20 transition-all">
+            <div className="space-y-4">
+              <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-accent">
+                <Laptop className="w-6 h-6" />
+              </div>
+              <h3 className="text-2xl sm:text-3xl font-display font-bold text-text-primary">
+                Full-Stack Web Development
+              </h3>
+              <p className="text-sm text-text-secondary leading-relaxed max-w-md">
+                End-to-end web architectures built with React, Next.js 14 (App Router), PHP, Laravel, Node.js, and TypeScript. Optimized for sub-second Core Web Vitals and zero layout shift.
+              </p>
+            </div>
+
+            <div className="flex flex-wrap gap-2 pt-4 border-t border-white/5">
+              {['Next.js', 'React', 'TypeScript', 'Laravel', 'Node.js', 'Tailwind CSS'].map((t) => (
+                <span key={t} className="px-3 py-1 rounded-full bg-bg-dark border border-white/5 text-xs font-mono text-text-secondary">
+                  {t}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          {/* Bento Card 2: SaaS Application Architecture (Span 5) */}
+          <div className="md:col-span-5 rounded-3xl bg-bg-card border border-white/10 p-8 flex flex-col justify-between space-y-6 hover:border-white/20 transition-all">
+            <div className="space-y-4">
+              <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-accent">
+                <Boxes className="w-6 h-6" />
+              </div>
+              <h3 className="text-xl sm:text-2xl font-display font-bold text-text-primary">
+                SaaS Application Architecture
+              </h3>
+              <p className="text-xs sm:text-sm text-text-secondary leading-relaxed">
+                Multi-tenant database schema isolation, role-based authorization (RBAC), token rotation, and tenant rewrite routing for enterprise-grade B2B platforms.
+              </p>
+            </div>
+
+            <div className="p-3.5 rounded-xl bg-bg-dark/80 border border-white/5 text-xs font-mono text-accent">
+              <span>● Strict Tenant Data Segregation</span>
+            </div>
+          </div>
+
+          {/* Bento Card 3: AI Integration & Automation (Span 5) */}
+          <div className="md:col-span-5 rounded-3xl bg-bg-card border border-white/10 p-8 flex flex-col justify-between space-y-6 hover:border-white/20 transition-all">
+            <div className="space-y-4">
+              <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-accent">
+                <Cpu className="w-6 h-6" />
+              </div>
+              <h3 className="text-xl sm:text-2xl font-display font-bold text-text-primary">
+                AI Integration & Automation
+              </h3>
+              <p className="text-xs sm:text-sm text-text-secondary leading-relaxed">
+                Embedding intelligent AI coding agents and prompt-driven automation workflows into development cycles to accelerate scaffolding and maintain high code quality.
+              </p>
+            </div>
+
+            <div className="flex flex-wrap gap-2 text-xs font-mono text-text-secondary">
+              <span className="px-3 py-1 rounded-full bg-bg-dark border border-white/5">AI Coding</span>
+              <span className="px-3 py-1 rounded-full bg-bg-dark border border-white/5">Workflow Automation</span>
+            </div>
+          </div>
+
+          {/* Bento Card 4: WordPress & Custom Themes (Span 7) */}
+          <div className="md:col-span-7 rounded-3xl bg-bg-card border border-white/10 p-8 flex flex-col justify-between space-y-6 hover:border-white/20 transition-all">
+            <div className="space-y-4">
+              <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-accent">
+                <Workflow className="w-6 h-6" />
+              </div>
+              <h3 className="text-2xl sm:text-3xl font-display font-bold text-text-primary">
+                WordPress & Headless CMS Engineering
+              </h3>
+              <p className="text-sm text-text-secondary leading-relaxed max-w-md">
+                13+ years building high-performance bespoke WordPress themes and plugins from scratch without bloated visual builders. Seamless decoupled headless architectures connecting WordPress or Laravel backends to Next.js clients.
+              </p>
+            </div>
+
+            <div className="flex flex-wrap gap-2 pt-4 border-t border-white/5">
+              {['Custom Themes', 'Plugin Development', 'WooCommerce', 'Headless CMS', 'RESTful APIs'].map((t) => (
+                <span key={t} className="px-3 py-1 rounded-full bg-bg-dark border border-white/5 text-xs font-mono text-text-secondary">
+                  {t}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          {/* Bento Card 5: UI/UX Engineering (Span 6) */}
+          <div className="md:col-span-6 rounded-3xl bg-bg-card border border-white/10 p-8 space-y-4 hover:border-white/20 transition-all">
+            <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-accent">
+              <Palette className="w-6 h-6" />
+            </div>
+            <h3 className="text-xl font-display font-bold text-text-primary">
+              UI/UX Design to Production Code
+            </h3>
+            <p className="text-xs sm:text-sm text-text-secondary leading-relaxed">
+              Converting high-fidelity Figma and Photoshop designs into responsive, accessible, pixel-perfect frontend experiences with bespoke design tokens and subtle micro-interactions.
+            </p>
+          </div>
+
+          {/* Bento Card 6: RESTful API Engineering (Span 6) */}
+          <div className="md:col-span-6 rounded-3xl bg-bg-card border border-white/10 p-8 space-y-4 hover:border-white/20 transition-all">
+            <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-accent">
+              <Terminal className="w-6 h-6" />
+            </div>
+            <h3 className="text-xl font-display font-bold text-text-primary">
+              RESTful API & Integration Engineering
+            </h3>
+            <p className="text-xs sm:text-sm text-text-secondary leading-relaxed">
+              Architecting secure, well-documented REST APIs in Express.js and Laravel with input sanitization, rate-limiting, and error boundaries protecting external data pipelines.
+            </p>
+          </div>
+
+        </div>
+
+      </section>
+
+      {/* =========================================================================
+          05 — PROFESSIONAL EXPERIENCE: Clean Interactive Career Timeline
+      ========================================================================= */}
+      <section id="experience" className="py-24 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto space-y-12">
+        
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 border-b border-white/10 pb-8">
+          <div className="space-y-3">
+            <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-accent">
+              <span>// 05 — Career Timeline</span>
+            </div>
+            <h2 className="text-4xl sm:text-6xl font-display font-extrabold tracking-tight uppercase">
+              13+ Years Journey
             </h2>
-            <p className="text-sm text-charcoal-400 max-w-xl">
-              Consistent record delivering web applications, custom CMS solutions, and responsive interfaces across leading software companies.
+            <p className="text-sm text-text-secondary max-w-xl">
+              Consistent record delivering web applications and custom systems across leading tech companies.
             </p>
           </div>
 
           <Link
             href="/experience"
-            className="inline-flex items-center gap-1.5 text-xs font-mono text-lime-400 hover:text-lime-300 font-semibold"
+            className="inline-flex items-center gap-1.5 text-xs font-mono text-accent hover:underline self-start sm:self-auto"
           >
-            <span>Complete Experience Breakdown</span>
+            <span>Detailed Career Record</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </Link>
         </div>
 
-        <div className="relative border-l border-charcoal-800 pl-6 sm:pl-10 ml-3 sm:ml-6 space-y-12">
+        {/* Timeline Stack */}
+        <div className="relative border-l border-white/10 pl-6 sm:pl-10 ml-3 sm:ml-6 space-y-10">
           {EXPERIENCES.map((exp, idx) => (
-            <div key={idx} className="relative group">
-              {/* Timeline Indicator Dot */}
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, x: -16 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: idx * 0.08 }}
+              className="relative group"
+            >
+              {/* Dot */}
               <div
                 className={`absolute -left-[31px] sm:-left-[47px] top-1.5 w-4 h-4 rounded-full border-2 ${
                   exp.isCurrent
-                    ? 'bg-lime-400 border-lime-400 shadow-lime-glow animate-pulse'
-                    : 'bg-charcoal-900 border-charcoal-700'
+                    ? 'bg-accent border-accent shadow-accent-glow animate-pulse'
+                    : 'bg-bg-dark border-white/20'
                 }`}
               />
 
-              <div className="bg-charcoal-900/60 border border-charcoal-800 hover:border-charcoal-700 rounded-2xl p-6 sm:p-8 space-y-4 transition-all">
+              <div className="rounded-2xl bg-bg-card border border-white/10 p-6 sm:p-8 space-y-4 hover:border-white/20 transition-all">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                   <div>
-                    <h3 className="text-lg sm:text-xl font-display font-bold text-sand-50">
+                    <h3 className="text-xl font-display font-bold text-text-primary">
                       {exp.role}
                     </h3>
-                    <p className="text-sm font-mono text-lime-400 font-semibold">
-                      {exp.company} <span className="text-charcoal-500 font-normal">· {exp.location}</span>
+                    <p className="text-sm font-mono text-accent font-semibold">
+                      {exp.company} <span className="text-text-muted font-normal">· {exp.location}</span>
                     </p>
                   </div>
-                  <span className="text-xs font-mono text-charcoal-400 px-3 py-1 rounded-full bg-charcoal-950 border border-charcoal-800 w-fit">
+                  <span className="text-xs font-mono text-text-secondary px-3 py-1 rounded-full bg-bg-dark border border-white/10 w-fit">
                     {exp.period}
                   </span>
                 </div>
 
-                <ul className="space-y-2 text-xs sm:text-sm text-charcoal-300">
-                  {exp.responsibilities.map((r, i) => (
-                    <li key={i} className="flex items-start gap-2">
-                      <span className="text-lime-400 font-mono mt-1">▹</span>
-                      <span>{r}</span>
+                <ul className="space-y-2 text-xs sm:text-sm text-text-secondary">
+                  {exp.responsibilities.map((r, rIdx) => (
+                    <li key={rIdx} className="flex items-start gap-2">
+                      <span className="text-accent font-mono mt-0.5">▹</span>
+                      <span className="leading-relaxed">{r}</span>
                     </li>
                   ))}
                 </ul>
 
                 {exp.achievements && (
-                  <div className="pt-3 border-t border-charcoal-800/80 space-y-2">
-                    <p className="text-[11px] font-mono uppercase text-charcoal-400 tracking-wider">
+                  <div className="pt-3 border-t border-white/5 space-y-2">
+                    <p className="text-[11px] font-mono uppercase text-text-muted tracking-wider">
                       CV Documented Achievements:
                     </p>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-mono text-lime-300">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-mono text-accent">
                       {exp.achievements.map((ach, aIdx) => (
-                        <div key={aIdx} className="flex items-center gap-2 p-2 rounded-lg bg-charcoal-950 border border-charcoal-800">
-                          <TrendingUp className="w-3.5 h-3.5 text-lime-400 flex-shrink-0" />
+                        <div key={aIdx} className="flex items-center gap-2 p-2.5 rounded-xl bg-bg-dark border border-white/5">
+                          <TrendingUp className="w-3.5 h-3.5 flex-shrink-0" />
                           <span>{ach}</span>
                         </div>
                       ))}
@@ -404,220 +652,130 @@ export default function HomePage() {
                   </div>
                 )}
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
+
       </section>
 
       {/* =========================================================================
-          TECHNICAL SKILLS MATRIX (Categorized, Honest, No Fake %)
+          06 — SELECTED CLIENT WORK: Verified Commercial References
       ========================================================================= */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 border-b border-charcoal-800 pb-6">
-          <div className="space-y-2">
-            <span className="text-xs font-mono tracking-widest text-lime-400 uppercase">
-              // Core Competencies
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-display font-extrabold text-sand-50 tracking-tight">
-              Technical Skills & Tooling
-            </h2>
-            <p className="text-sm text-charcoal-400 max-w-xl">
-              Strictly reflects the skills, frameworks, and CMS ecosystems documented in the official CV.
-            </p>
-          </div>
-
-          <Link
-            href="/skills"
-            className="inline-flex items-center gap-1.5 text-xs font-mono text-lime-400 hover:text-lime-300 font-semibold"
-          >
-            <span>Explore Skill Categories</span>
-            <ArrowRight className="w-3.5 h-3.5" />
-          </Link>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {SKILL_CATEGORIES.map((cat, idx) => (
-            <div
-              key={idx}
-              className="bg-charcoal-900 border border-charcoal-800 rounded-2xl p-6 sm:p-8 space-y-5"
-            >
-              <div>
-                <h3 className="text-lg font-display font-bold text-sand-50">
-                  {cat.category}
-                </h3>
-                <p className="text-xs text-charcoal-400 mt-1">
-                  {cat.tagline}
-                </p>
-              </div>
-
-              <div className="flex flex-wrap gap-2">
-                {cat.skills.map((skill) => (
-                  <span
-                    key={skill.name}
-                    className={`px-3 py-1.5 rounded-lg text-xs font-mono font-medium transition-all ${
-                      skill.highlight
-                        ? 'bg-charcoal-950 text-lime-400 border border-lime-400/30'
-                        : 'bg-charcoal-950/60 text-charcoal-300 border border-charcoal-800'
-                    }`}
-                  >
-                    {skill.name}
-                  </span>
-                ))}
-              </div>
+      <section id="client-work" className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-12">
+        
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 border-b border-white/10 pb-8">
+          <div className="space-y-3">
+            <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-accent">
+              <span>// 06 — Commercial Track Record</span>
             </div>
-          ))}
-        </div>
-      </section>
-
-      {/* =========================================================================
-          SELECTED PREVIOUS CLIENT WEBSITES (Referenced From CV)
-      ========================================================================= */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 border-b border-charcoal-800 pb-6">
-          <div className="space-y-2">
-            <span className="text-xs font-mono tracking-widest text-lime-400 uppercase">
-              // Client & Enterprise Work
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-display font-extrabold text-sand-50 tracking-tight">
-              Selected Client Websites
+            <h2 className="text-4xl sm:text-6xl font-display font-extrabold tracking-tight uppercase">
+              Selected Client Work
             </h2>
-            <p className="text-sm text-charcoal-400 max-w-xl">
-              Past client websites and portal deliveries documented in the CV across corporate, e-commerce, and healthcare sectors.
+            <p className="text-sm text-text-secondary max-w-xl">
+              Verified corporate websites, e-commerce storefronts, and healthcare portals documented from CV experience.
             </p>
           </div>
 
           <Link
             href="/client-work"
-            className="inline-flex items-center gap-1.5 text-xs font-mono text-lime-400 hover:text-lime-300 font-semibold"
+            className="inline-flex items-center gap-1.5 text-xs font-mono text-accent hover:underline self-start sm:self-auto"
           >
-            <span>View All Client References</span>
+            <span>View All 15 Client References</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </Link>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {selectedClientSites.map((site, idx) => (
+          {selectedClients.map((client, idx) => (
             <div
               key={idx}
-              className="group bg-charcoal-900 border border-charcoal-800 hover:border-charcoal-700 rounded-2xl p-6 space-y-4 transition-all"
+              className="rounded-2xl bg-bg-card border border-white/10 p-6 space-y-4 hover:border-white/20 transition-all flex flex-col justify-between"
             >
-              <div className="flex items-center justify-between">
-                <span className="text-[11px] font-mono text-lime-400 uppercase px-2 py-0.5 rounded bg-charcoal-950 border border-charcoal-800">
-                  {site.category}
-                </span>
-                <a
-                  href={site.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-1.5 rounded-lg bg-charcoal-950 text-charcoal-400 hover:text-sand-50 border border-charcoal-800"
-                  aria-label={`Visit ${site.name}`}
-                >
-                  <ExternalLink className="w-3.5 h-3.5" />
-                </a>
-              </div>
+              <div className="space-y-3">
+                <div className="flex items-center justify-between">
+                  <span className="text-[11px] font-mono text-accent bg-bg-dark px-2.5 py-0.5 rounded border border-white/10">
+                    {client.category}
+                  </span>
+                  <a
+                    href={client.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-1.5 rounded-lg bg-bg-dark text-text-muted hover:text-text-primary border border-white/5 transition-colors"
+                    aria-label={`Visit ${client.name}`}
+                  >
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
+                </div>
 
-              <div>
-                <h3 className="text-lg font-display font-bold text-sand-50 group-hover:text-lime-400 transition-colors">
-                  {site.name}
+                <h3 className="text-lg font-display font-bold text-text-primary">
+                  {client.name}
                 </h3>
-                <p className="text-xs font-mono text-charcoal-400">
-                  {site.url.replace('https://', '')}
+                <p className="text-xs text-text-secondary leading-relaxed">
+                  {client.description}
                 </p>
               </div>
 
-              <p className="text-xs text-charcoal-300 leading-relaxed">
-                {site.description}
-              </p>
-
-              <div className="pt-2 border-t border-charcoal-800/80 text-[11px] font-mono text-charcoal-400">
-                <span className="text-sand-50 font-semibold">Scope:</span> {site.role}
+              <div className="pt-3 border-t border-white/5 text-xs font-mono text-text-muted">
+                <span className="text-text-primary font-medium">Scope:</span> {client.role}
               </div>
             </div>
           ))}
         </div>
+
       </section>
 
       {/* =========================================================================
-          SERVICES & CAPABILITIES
+          07 — CLOSING SECTION: Memorable Closing & Working Contact Actions
       ========================================================================= */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-        <div className="border-b border-charcoal-800 pb-6 space-y-2">
-          <span className="text-xs font-mono tracking-widest text-lime-400 uppercase">
-            // Engagement Opportunities
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-display font-extrabold text-sand-50 tracking-tight">
-            How I Can Help Your Team
-          </h2>
-          <p className="text-sm text-charcoal-400 max-w-xl">
-            Contract, freelance, and full-time technical contributions tailored for modern product teams.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {SERVICES.map((srv, idx) => (
-            <div
-              key={idx}
-              className="bg-charcoal-900 border border-charcoal-800 rounded-2xl p-6 sm:p-7 space-y-4 hover:border-charcoal-700 transition-all"
-            >
-              <div className="w-10 h-10 rounded-xl bg-charcoal-950 border border-charcoal-800 flex items-center justify-center text-lime-400 font-mono text-xs font-bold">
-                0{idx + 1}
-              </div>
-              <h3 className="text-base font-display font-bold text-sand-50">
-                {srv.title}
-              </h3>
-              <p className="text-xs text-charcoal-300 leading-relaxed">
-                {srv.description}
-              </p>
-              <div className="flex flex-wrap gap-1.5 pt-2">
-                {srv.tags.map((t) => (
-                  <span
-                    key={t}
-                    className="text-[10px] font-mono px-2 py-0.5 rounded bg-charcoal-950 border border-charcoal-800 text-charcoal-400"
-                  >
-                    {t}
-                  </span>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* =========================================================================
-          EDITORIAL CONCLUDING BANNER
-      ========================================================================= */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-gradient-to-r from-charcoal-900 via-charcoal-850 to-charcoal-900 border border-charcoal-800 rounded-3xl p-8 sm:p-12 lg:p-16 text-center space-y-6 relative overflow-hidden">
-          <div className="max-w-2xl mx-auto space-y-4">
-            <span className="text-xs font-mono uppercase tracking-widest text-lime-400">
-              // Direct Engagement
+      <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div className="rounded-3xl bg-gradient-to-b from-bg-card to-bg-dark border border-white/10 p-8 sm:p-14 lg:p-20 text-center space-y-8 relative overflow-hidden shadow-2xl">
+          
+          <div className="max-w-3xl mx-auto space-y-6">
+            <span className="text-xs font-mono uppercase tracking-widest text-accent">
+              // 07 — Initiate Collaboration
             </span>
-            <h2 className="text-3xl sm:text-5xl font-display font-extrabold text-sand-50 tracking-tight">
-              Ready to accelerate your next release?
+            <h2 className="text-4xl sm:text-6xl lg:text-7xl font-display font-extrabold tracking-tight uppercase leading-[0.98]">
+              Let's Build <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent via-accent-hover to-emerald-400">
+                Something Exceptional.
+              </span>
             </h2>
-            <p className="text-sm text-charcoal-300">
-              Download my official CV or reach out directly to schedule a conversation about your technical roadmap.
+            <p className="text-sm sm:text-base text-text-secondary max-w-xl mx-auto leading-relaxed">
+              Available for full-time international remote roles, enterprise SaaS architecture, and custom WordPress/Laravel engagements.
             </p>
           </div>
 
-          <div className="pt-2 flex flex-wrap items-center justify-center gap-4">
+          <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-lime-400 hover:bg-lime-500 text-charcoal-950 font-bold text-sm tracking-tight transition-all shadow-lime-glow"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-accent hover:bg-accent-hover text-bg-dark font-display font-bold text-sm tracking-tight transition-all shadow-accent-glow hover:scale-[1.02]"
             >
-              <span>Get In Touch</span>
+              <span>Get in Touch</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
 
             <a
               href={PERSONAL_INFO.cvPath}
               download={PERSONAL_INFO.cvFileName}
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-charcoal-950 hover:bg-charcoal-800 text-sand-50 border border-charcoal-700 font-mono text-xs transition-all"
+              className="inline-flex items-center gap-2 px-7 py-4 rounded-full bg-white/5 hover:bg-white/10 text-text-primary border border-white/10 font-mono text-xs transition-all"
             >
-              <FileDown className="w-4 h-4 text-lime-400" />
-              <span>Download CV (Original PDF)</span>
+              <FileDown className="w-4 h-4 text-accent" />
+              <span>Download CV (PDF)</span>
             </a>
           </div>
+
+          <div className="pt-8 border-t border-white/5 flex flex-wrap justify-center gap-6 text-xs font-mono text-text-muted">
+            <a href={`mailto:${PERSONAL_INFO.email}`} className="hover:text-accent transition-colors">
+              {PERSONAL_INFO.email}
+            </a>
+            <span>·</span>
+            <a href={`tel:${PERSONAL_INFO.phone}`} className="hover:text-accent transition-colors">
+              {PERSONAL_INFO.phone}
+            </a>
+            <span>·</span>
+            <span>Islamabad, Pakistan</span>
+          </div>
+
         </div>
       </section>
 
