@@ -50,9 +50,9 @@ export default function HomePage() {
             <span>AI-Augmented Full-Stack Engineering</span>
           </div>
 
-          {/* Main Editorial Headline */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-            <div className="lg:col-span-8 space-y-6">
+          {/* Main Editorial Headline & Asymmetric Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div className="lg:col-span-7 space-y-6">
               <h1 className="text-4xl sm:text-6xl lg:text-7xl font-display font-extrabold text-sand-50 tracking-tight leading-[1.06]">
                 Building Digital Products That Solve{' '}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-lime-400 via-lime-300 to-emerald-400">
@@ -93,44 +93,63 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Quick Metrics & Capability Terminal */}
-            <div className="lg:col-span-4 bg-charcoal-900/90 border border-charcoal-800 rounded-2xl p-6 sm:p-7 space-y-6 shadow-editorial backdrop-blur">
-              <div className="flex items-center justify-between border-b border-charcoal-800 pb-4">
-                <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 rounded-full bg-red-500/80" />
-                  <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
-                  <div className="w-3 h-3 rounded-full bg-green-500/80" />
+            {/* Professional Portrait & Interactive Profile Card */}
+            <div className="lg:col-span-5 space-y-6">
+              
+              {/* Image Frame with Editorial Lime Accent */}
+              <div className="relative group mx-auto max-w-sm lg:max-w-none">
+                <div className="absolute -inset-1.5 rounded-3xl bg-gradient-to-tr from-lime-400/40 via-emerald-400/20 to-transparent blur-lg opacity-70 group-hover:opacity-100 transition duration-500" />
+                
+                <div className="relative bg-charcoal-900 border border-charcoal-700 rounded-3xl p-3 overflow-hidden shadow-editorial">
+                  <div className="relative w-full aspect-[4/4.5] sm:aspect-[4/4.2] rounded-2xl overflow-hidden bg-charcoal-950">
+                    <img
+                      src={PERSONAL_INFO.avatarUrl}
+                      alt="Arif Mahmood — AI-Powered Full-Stack Developer"
+                      className="w-full h-full object-cover object-top filter brightness-[1.02] contrast-[1.03] group-hover:scale-[1.02] transition-transform duration-500"
+                    />
+                    
+                    {/* Floating Status Badge */}
+                    <div className="absolute bottom-3 left-3 right-3 p-3 rounded-xl bg-[#090A0C]/90 backdrop-blur-md border border-charcoal-700/80 flex items-center justify-between">
+                      <div className="flex items-center gap-2.5">
+                        <span className="w-2.5 h-2.5 rounded-full bg-lime-400 animate-pulse" />
+                        <div>
+                          <p className="text-xs font-display font-bold text-sand-50">Arif Mahmood</p>
+                          <p className="text-[10px] font-mono text-charcoal-400">Islamabad, PK · Available for Hire</p>
+                        </div>
+                      </div>
+                      <span className="text-[11px] font-mono font-bold text-lime-400 bg-charcoal-900 px-2 py-0.5 rounded border border-charcoal-700">
+                        13+ Yrs
+                      </span>
+                    </div>
+                  </div>
                 </div>
-                <span className="font-mono text-[11px] text-charcoal-400 uppercase tracking-widest">
-                  arif_profile.sys
-                </span>
               </div>
 
-              <div className="space-y-4 text-xs font-mono">
-                <div>
-                  <span className="text-charcoal-500">const</span>{' '}
-                  <span className="text-sand-50">engineer</span> = &#123;
+              {/* Quick Metrics Terminal */}
+              <div className="bg-charcoal-900/90 border border-charcoal-800 rounded-2xl p-5 space-y-4 shadow-editorial backdrop-blur">
+                <div className="flex items-center justify-between border-b border-charcoal-800 pb-3">
+                  <div className="flex items-center gap-2">
+                    <div className="w-2.5 h-2.5 rounded-full bg-red-500/80" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/80" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-green-500/80" />
+                  </div>
+                  <span className="font-mono text-[10px] text-charcoal-400 uppercase tracking-widest">
+                    verified_engineer.sys
+                  </span>
                 </div>
-                <div className="pl-4 space-y-1 text-charcoal-300">
-                  <p>name: <span className="text-lime-400">"Arif Mahmood"</span>,</p>
-                  <p>experience: <span className="text-lime-400">"13+ Years"</span>,</p>
-                  <p>location: <span className="text-sand-50">"Islamabad, PK"</span>,</p>
-                  <p>stack: [<span className="text-sand-50">"Next.js"</span>, <span className="text-sand-50">"Laravel"</span>, <span className="text-sand-50">"WordPress"</span>],</p>
-                  <p>openForWork: <span className="text-lime-400">true</span>,</p>
+
+                <div className="grid grid-cols-2 gap-3 text-center">
+                  <div className="p-3 bg-charcoal-950/60 rounded-xl border border-charcoal-800">
+                    <p className="text-2xl font-display font-extrabold text-lime-400">13+</p>
+                    <p className="text-[10px] font-mono text-charcoal-400 uppercase mt-0.5">Years Experience</p>
+                  </div>
+                  <div className="p-3 bg-charcoal-950/60 rounded-xl border border-charcoal-800">
+                    <p className="text-2xl font-display font-extrabold text-sand-50">08</p>
+                    <p className="text-[10px] font-mono text-charcoal-400 uppercase mt-0.5">Software Assets</p>
+                  </div>
                 </div>
-                <div>&#125;;</div>
               </div>
 
-              <div className="pt-2 border-t border-charcoal-800/80 grid grid-cols-2 gap-3 text-center">
-                <div className="p-3 bg-charcoal-950/60 rounded-xl border border-charcoal-800">
-                  <p className="text-2xl font-display font-extrabold text-lime-400">13+</p>
-                  <p className="text-[10px] font-mono text-charcoal-400 uppercase mt-0.5">Years Active</p>
-                </div>
-                <div className="p-3 bg-charcoal-950/60 rounded-xl border border-charcoal-800">
-                  <p className="text-2xl font-display font-extrabold text-sand-50">08</p>
-                  <p className="text-[10px] font-mono text-charcoal-400 uppercase mt-0.5">Software Assets</p>
-                </div>
-              </div>
             </div>
           </div>
 

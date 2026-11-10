@@ -61,61 +61,73 @@ export default function AboutPage() {
           </div>
         </div>
 
-        {/* Right Column: Fast Info Card */}
-        <div className="lg:col-span-4 bg-charcoal-900 border border-charcoal-800 rounded-2xl p-6 sm:p-7 space-y-6 shadow-editorial">
-          <p className="text-xs font-mono text-charcoal-400 uppercase tracking-wider">
-            Quick Facts
-          </p>
-
-          <div className="space-y-4 text-xs font-mono">
-            <div>
-              <span className="text-charcoal-500">Location</span>
-              <p className="text-sand-50 font-semibold mt-0.5">{PERSONAL_INFO.location}</p>
-            </div>
-
-            <div>
-              <span className="text-charcoal-500">Experience</span>
-              <p className="text-sand-50 font-semibold mt-0.5">{PERSONAL_INFO.experienceYears} Years (Since 2013)</p>
-            </div>
-
-            <div>
-              <span className="text-charcoal-500">Primary Email</span>
-              <a href={`mailto:${PERSONAL_INFO.email}`} className="text-lime-400 font-semibold hover:underline block mt-0.5 break-all">
-                {PERSONAL_INFO.email}
-              </a>
-            </div>
-
-            <div>
-              <span className="text-charcoal-500">Phone / WhatsApp</span>
-              <p className="text-sand-50 font-semibold mt-0.5">{PERSONAL_INFO.phone}</p>
-            </div>
-
-            <div>
-              <span className="text-charcoal-500">Availability</span>
-              <p className="text-lime-400 font-semibold mt-0.5 flex items-center gap-1.5">
-                <span className="w-2 h-2 rounded-full bg-lime-400 animate-pulse" />
-                <span>Open to Remote & Contracts</span>
-              </p>
+        {/* Right Column: Fast Info Card & Real Portrait */}
+        <div className="lg:col-span-4 space-y-6">
+          <div className="bg-charcoal-900 border border-charcoal-800 rounded-3xl p-4 shadow-editorial overflow-hidden">
+            <div className="relative w-full aspect-[4/4.5] rounded-2xl overflow-hidden bg-charcoal-950 border border-charcoal-800">
+              <img
+                src={PERSONAL_INFO.avatarUrl}
+                alt="Arif Mahmood"
+                className="w-full h-full object-cover object-top"
+              />
             </div>
           </div>
 
-          <div className="pt-4 border-t border-charcoal-800 space-y-2">
-            <a
-              href={PERSONAL_INFO.cvPath}
-              download={PERSONAL_INFO.cvFileName}
-              className="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-charcoal-950 hover:bg-charcoal-800 text-sand-50 border border-charcoal-700 text-xs font-mono transition-all"
-            >
-              <FileDown className="w-4 h-4 text-lime-400" />
-              <span>Download CV (PDF)</span>
-            </a>
+          <div className="bg-charcoal-900 border border-charcoal-800 rounded-2xl p-6 sm:p-7 space-y-6 shadow-editorial">
+            <p className="text-xs font-mono text-charcoal-400 uppercase tracking-wider">
+              Quick Facts
+            </p>
 
-            <Link
-              href="/contact"
-              className="w-full flex items-center justify-center gap-1.5 py-3 rounded-xl bg-lime-400 hover:bg-lime-500 text-charcoal-950 font-bold text-xs tracking-tight transition-all shadow-lime-glow"
-            >
-              <span>Get in Touch</span>
-              <ArrowRight className="w-3.5 h-3.5" />
-            </Link>
+            <div className="space-y-4 text-xs font-mono">
+              <div>
+                <span className="text-charcoal-500">Location</span>
+                <p className="text-sand-50 font-semibold mt-0.5">{PERSONAL_INFO.location}</p>
+              </div>
+
+              <div>
+                <span className="text-charcoal-500">Experience</span>
+                <p className="text-sand-50 font-semibold mt-0.5">{PERSONAL_INFO.experienceYears} Years (Since 2013)</p>
+              </div>
+
+              <div>
+                <span className="text-charcoal-500">Primary Email</span>
+                <a href={`mailto:${PERSONAL_INFO.email}`} className="text-lime-400 font-semibold hover:underline block mt-0.5 break-all">
+                  {PERSONAL_INFO.email}
+                </a>
+              </div>
+
+              <div>
+                <span className="text-charcoal-500">Phone / WhatsApp</span>
+                <p className="text-sand-50 font-semibold mt-0.5">{PERSONAL_INFO.phone}</p>
+              </div>
+
+              <div>
+                <span className="text-charcoal-500">Availability</span>
+                <p className="text-lime-400 font-semibold mt-0.5 flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-lime-400 animate-pulse" />
+                  <span>Open to Remote & Contracts</span>
+                </p>
+              </div>
+            </div>
+
+            <div className="pt-4 border-t border-charcoal-800 space-y-2">
+              <a
+                href={PERSONAL_INFO.cvPath}
+                download={PERSONAL_INFO.cvFileName}
+                className="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-charcoal-950 hover:bg-charcoal-800 text-sand-50 border border-charcoal-700 text-xs font-mono transition-all"
+              >
+                <FileDown className="w-4 h-4 text-lime-400" />
+                <span>Download CV (PDF)</span>
+              </a>
+
+              <Link
+                href="/contact"
+                className="w-full flex items-center justify-center gap-1.5 py-3 rounded-xl bg-lime-400 hover:bg-lime-500 text-charcoal-950 font-bold text-xs tracking-tight transition-all shadow-lime-glow"
+              >
+                <span>Get in Touch</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+            </div>
           </div>
         </div>
 

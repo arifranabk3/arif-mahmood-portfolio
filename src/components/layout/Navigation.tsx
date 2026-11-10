@@ -37,10 +37,14 @@ export const Navigation: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           
-          {/* Brand Wordmark with Live Availability Indicator */}
+          {/* Brand Wordmark with Live Availability Indicator & Real Portrait */}
           <Link href="/" className="group flex items-center gap-3">
-            <div className="w-10 h-10 rounded-lg bg-charcoal-900 border border-charcoal-700 flex items-center justify-center text-lime-400 font-mono text-sm font-bold group-hover:border-lime-400/60 group-hover:shadow-lime-glow transition-all">
-              AM
+            <div className="relative w-10 h-10 rounded-full overflow-hidden border-2 border-charcoal-700 group-hover:border-lime-400 group-hover:shadow-lime-glow transition-all flex-shrink-0">
+              <img
+                src={PERSONAL_INFO.avatarUrl}
+                alt="Arif Mahmood"
+                className="w-full h-full object-cover object-top"
+              />
             </div>
             <div className="flex flex-col">
               <span className="font-display font-bold text-base tracking-tight text-sand-50 group-hover:text-lime-400 transition-colors">
