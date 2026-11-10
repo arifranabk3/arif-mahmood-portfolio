@@ -10,10 +10,6 @@ import {
   X, 
   ArrowUpRight, 
   FileDown, 
-  Sparkles,
-  Layers,
-  Briefcase,
-  Compass
 } from 'lucide-react';
 import { PERSONAL_INFO } from '@/data/portfolioData';
 
@@ -49,15 +45,15 @@ export const Navigation: React.FC = () => {
         transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
         className={`max-w-6xl mx-auto rounded-full transition-all duration-300 ${
           isScrolled 
-            ? 'glass-pure shadow-card py-2.5 px-5 sm:px-7 border border-canvas-border' 
-            : 'bg-canvas-pure/90 backdrop-blur-md shadow-soft py-3 px-5 sm:px-7 border border-canvas-borderSoft'
+            ? 'glass-pure shadow-card py-2.5 px-5 sm:px-7 border border-surface-border' 
+            : 'bg-surface-pure/92 backdrop-blur-md shadow-soft py-3 px-5 sm:px-7 border border-surface-borderSoft'
         }`}
       >
         <div className="flex items-center justify-between">
           
           {/* Personal Monogram / Logo with Actual Avatar */}
           <Link href="/" className="group flex items-center gap-3">
-            <div className="relative w-9 h-9 rounded-full overflow-hidden border border-canvas-border group-hover:border-accent-greenDark transition-colors flex-shrink-0 shadow-sm">
+            <div className="relative w-9 h-9 rounded-full overflow-hidden border border-surface-border group-hover:border-surface-forest transition-colors flex-shrink-0 shadow-sm">
               <Image
                 src={PERSONAL_INFO.avatarUrl}
                 alt="Arif Mahmood"
@@ -68,28 +64,28 @@ export const Navigation: React.FC = () => {
               />
             </div>
             <div className="flex flex-col">
-              <span className="font-display font-bold text-sm tracking-tight text-ink-primary group-hover:text-accent-greenDark transition-colors">
+              <span className="font-display font-bold text-sm tracking-tight text-ink-primary group-hover:text-ink-forest transition-colors">
                 Arif Mahmood
               </span>
-              <span className="text-[10px] font-mono text-ink-muted flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-accent-green animate-pulse" />
+              <span className="text-[10px] font-mono text-ink-secondary flex items-center gap-1.5 font-medium">
+                <span className="w-1.5 h-1.5 rounded-full bg-accent-lime animate-pulse ring-2 ring-accent-forest/30" />
                 <span>13+ Yrs Exp · Available</span>
               </span>
             </div>
           </Link>
 
           {/* Desktop Center Pill Navigation */}
-          <nav className="hidden lg:flex items-center gap-1 bg-canvas-soft/80 p-1 rounded-full border border-canvas-border">
+          <nav className="hidden lg:flex items-center gap-1 bg-surface-soft p-1 rounded-full border border-surface-border">
             {navLinks.map((link) => {
               const isActive = pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href));
               return (
                 <Link
                   key={link.label}
                   href={link.href}
-                  className={`px-3.5 py-1.5 rounded-full text-xs font-medium transition-all ${
+                  className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all ${
                     isActive
-                      ? 'bg-canvas-pure text-accent-greenDark font-bold shadow-sm'
-                      : 'text-ink-secondary hover:text-ink-primary hover:bg-canvas-pure/50'
+                      ? 'bg-surface-forest text-accent-lime shadow-sm'
+                      : 'text-ink-secondary hover:text-ink-primary hover:bg-surface-pure/80'
                   }`}
                 >
                   {link.label}
@@ -103,25 +99,25 @@ export const Navigation: React.FC = () => {
             <a
               href={PERSONAL_INFO.cvPath}
               download={PERSONAL_INFO.cvFileName}
-              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-canvas-soft hover:bg-canvas-border/70 text-ink-secondary hover:text-ink-primary border border-canvas-border text-xs font-mono font-medium transition-all"
+              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-surface-soft hover:bg-surface-border/60 text-ink-primary border border-surface-border text-xs font-mono font-semibold transition-all"
             >
-              <FileDown className="w-3.5 h-3.5 text-accent-greenDark" />
+              <FileDown className="w-3.5 h-3.5 text-ink-forest" />
               <span>CV (PDF)</span>
             </a>
 
             <Link
               href="/contact"
-              className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-accent-greenDark hover:bg-accent-greenDarkHover text-canvas-pure font-bold text-xs tracking-tight transition-all shadow-sm hover:scale-[1.02]"
+              className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-surface-forest hover:bg-surface-forestDark text-surface-pure font-bold text-xs tracking-tight transition-all shadow-sm hover:scale-[1.02]"
             >
               <span>Let's Talk</span>
-              <ArrowUpRight className="w-3.5 h-3.5" />
+              <ArrowUpRight className="w-3.5 h-3.5 text-accent-lime" />
             </Link>
           </div>
 
           {/* Mobile Menu Hamburger */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden p-2 rounded-full bg-canvas-soft border border-canvas-border text-ink-secondary hover:text-ink-primary"
+            className="lg:hidden p-2 rounded-full bg-surface-soft border border-surface-border text-ink-primary hover:bg-surface-pure transition-colors"
             aria-label="Toggle navigation"
           >
             {mobileOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
@@ -138,7 +134,7 @@ export const Navigation: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
-            className="lg:hidden mt-2 mx-auto max-w-sm rounded-3xl bg-canvas-pure border border-canvas-border p-5 shadow-elevated space-y-4"
+            className="lg:hidden mt-2 mx-auto max-w-sm rounded-3xl bg-surface-pure border border-surface-border p-5 shadow-elevated space-y-4"
           >
             <div className="grid grid-cols-2 gap-2">
               {navLinks.map((link) => (
@@ -146,10 +142,10 @@ export const Navigation: React.FC = () => {
                   key={link.label}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className={`px-3 py-2 rounded-xl text-xs font-medium transition-colors ${
+                  className={`px-3 py-2 rounded-xl text-xs font-semibold transition-colors ${
                     pathname === link.href
-                      ? 'bg-accent-lavender text-accent-greenDark font-bold'
-                      : 'text-ink-secondary hover:text-ink-primary hover:bg-canvas-soft'
+                      ? 'bg-surface-forest text-accent-lime font-bold'
+                      : 'text-ink-primary hover:bg-surface-soft'
                   }`}
                 >
                   {link.label}
@@ -157,22 +153,22 @@ export const Navigation: React.FC = () => {
               ))}
             </div>
 
-            <div className="pt-3 border-t border-canvas-border flex flex-col gap-2">
+            <div className="pt-3 border-t border-surface-border flex flex-col gap-2">
               <a
                 href={PERSONAL_INFO.cvPath}
                 download={PERSONAL_INFO.cvFileName}
-                className="flex items-center justify-center gap-2 py-2.5 rounded-xl bg-canvas-soft border border-canvas-border text-xs font-mono text-ink-primary font-medium"
+                className="flex items-center justify-center gap-2 py-2.5 rounded-xl bg-surface-soft border border-surface-border text-xs font-mono text-ink-primary font-bold"
               >
-                <FileDown className="w-3.5 h-3.5 text-accent-greenDark" />
+                <FileDown className="w-3.5 h-3.5 text-ink-forest" />
                 <span>Download Official CV (PDF)</span>
               </a>
               <Link
                 href="/contact"
                 onClick={() => setMobileOpen(false)}
-                className="flex items-center justify-center gap-1.5 py-2.5 rounded-xl bg-accent-greenDark text-canvas-pure font-bold text-xs shadow-sm"
+                className="flex items-center justify-center gap-1.5 py-2.5 rounded-xl bg-surface-forest text-surface-pure font-bold text-xs shadow-sm"
               >
                 <span>Let's Talk</span>
-                <ArrowUpRight className="w-3.5 h-3.5" />
+                <ArrowUpRight className="w-3.5 h-3.5 text-accent-lime" />
               </Link>
             </div>
           </motion.div>

@@ -4,24 +4,25 @@
 
 @layer base {
   :root {
-    --canvas: #F8F9F6;
+    --canvas: #F1F0E9;
     --canvas-pure: #FFFFFF;
-    --canvas-soft: #EEF2EA;
-    --canvas-dark: #17251E;
+    --canvas-soft: #E7E9E1;
+    --surface-charcoal: #202923;
+    --surface-forest: #193A2D;
     --ink-primary: #202923;
-    --ink-secondary: #68736C;
-    --accent-green: #A7D46F;
-    --accent-dark-green: #315C45;
+    --ink-secondary: #58645D;
+    --accent-lime: #B7D878;
+    --accent-forest: #193A2D;
   }
 
   html {
     scroll-behavior: smooth;
     color-scheme: light;
-    background-color: #F8F9F6;
+    background-color: #F1F0E9;
   }
 
   body {
-    background-color: #F8F9F6;
+    background-color: #F1F0E9;
     color: #202923;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
     text-rendering: optimizeLegibility;
@@ -30,14 +31,20 @@
   }
 
   ::selection {
-    background-color: #A7D46F;
-    color: #17251E;
+    background-color: #B7D878;
+    color: #193A2D;
   }
 }
 
 /* Warm Agency Dot Mesh */
 .light-dot-grid {
-  background-image: radial-gradient(rgba(32, 41, 35, 0.08) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(32, 41, 35, 0.09) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* Dark Section Dot Mesh */
+.dark-dot-grid {
+  background-image: radial-gradient(rgba(183, 216, 120, 0.12) 1px, transparent 1px);
   background-size: 28px 28px;
 }
 
@@ -45,37 +52,44 @@
 .light-linear-grid {
   background-size: 56px 56px;
   background-image: 
-    linear-gradient(to right, rgba(32, 41, 35, 0.025) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(32, 41, 35, 0.025) 1px, transparent 1px);
+    linear-gradient(to right, rgba(32, 41, 35, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(32, 41, 35, 0.03) 1px, transparent 1px);
 }
 
 /* Frosted Glass Navbar & Elements */
 .glass-light {
-  background: rgba(248, 249, 246, 0.85);
+  background: rgba(241, 240, 233, 0.88);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(226, 231, 223, 0.8);
+  border: 1px solid rgba(216, 221, 212, 0.9);
 }
 
 .glass-pure {
-  background: rgba(255, 255, 255, 0.88);
+  background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(226, 231, 223, 0.6);
+  border: 1px solid rgba(216, 221, 212, 0.75);
 }
 
-/* Custom Scrollbar for Warm Light Theme */
+.glass-dark {
+  background: rgba(25, 58, 45, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(43, 71, 58, 0.85);
+}
+
+/* Custom Scrollbar for Warm Balanced Theme */
 ::-webkit-scrollbar {
   width: 7px;
   height: 7px;
 }
 ::-webkit-scrollbar-track {
-  background: #F8F9F6;
+  background: #F1F0E9;
 }
 ::-webkit-scrollbar-thumb {
-  background: #D5DCD2;
+  background: #C8CEC3;
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #B9C3B5;
+  background: #315C45;
 }

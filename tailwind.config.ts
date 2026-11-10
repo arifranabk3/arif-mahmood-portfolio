@@ -11,31 +11,49 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Master Prompt Light Design System Palette
-        canvas: {
-          DEFAULT: "#F8F9F6", // Main background
-          pure: "#FFFFFF",    // Secondary / pure card background
-          soft: "#EEF2EA",    // Soft section background
-          border: "#E2E7DF",  // Subtle divider borders
-          borderSoft: "#ECEFEA",
-          dark: "#17251E",    // Dark contrast section background
-          darkCard: "#1D2D25",
+        // Master Balanced Visual System (45% Warm Neutral / 25% Deep Green & Charcoal / 20% White / 10% Accent)
+        surface: {
+          canvas: "#F1F0E9",       // Main warm neutral background
+          pure: "#FFFFFF",         // Crisp white card surface
+          soft: "#E7E9E1",         // Soft neutral surface
+          charcoal: "#202923",     // Dark charcoal surfaces & cards
+          charcoalDark: "#18201A", // Deeper charcoal for accents
+          forest: "#193A2D",       // Deep forest green section & card surface
+          forestDark: "#132820",   // Dark forest green base
+          border: "#D8DDD4",       // Crisp divider border on light surfaces
+          borderSoft: "#E2E6DF",   // Soft border
+          borderDark: "#2B473A",   // Border on deep forest surfaces
+          borderCharcoal: "#303E35", // Border on dark charcoal surfaces
         },
         ink: {
-          primary: "#202923",   // Primary typography
-          secondary: "#68736C", // Secondary typography
-          muted: "#8A948E",     // Micro labels & captions
-          inverse: "#F8F9F6",   // Text on dark sections
+          primary: "#202923",      // Primary dark typography on light backgrounds
+          secondary: "#58645D",    // Secondary text on light backgrounds (WCAG AAA)
+          muted: "#7A877F",        // Subdued labels and micro-text
+          onDark: "#FFFFFF",       // Pure white text on dark surfaces
+          onDarkMuted: "#D1DAD3",  // Secondary text on dark surfaces
+          forest: "#193A2D",       // Forest green headings on light surfaces
+          forestSecondary: "#315C45", // Secondary green headings
         },
         accent: {
-          green: "#A7D46F",     // Accent green
-          greenHover: "#96C65D",
-          greenDark: "#315C45", // Accent dark green for badges & contrast
-          greenDarkHover: "#264835",
-          lavender: "#ECE9FA",  // Soft lavender pastel
-          lavenderBorder: "#DDD8F5",
-          peach: "#F8E8DD",     // Soft peach pastel
-          peachBorder: "#F2D8C7",
+          lime: "#B7D878",         // Primary energetic accent lime
+          limeHover: "#A5C765",
+          forest: "#193A2D",       // Deep green buttons & badges
+          forestHover: "#234D3D",
+          greenSecondary: "#315C45", // Secondary green
+          lavender: "#E9E5F4",     // Muted lavender for subtle bento tags
+          lavenderBorder: "#D5CEEB",
+          peach: "#F2E2D7",        // Muted peach for challenge bento tags
+          peachBorder: "#E5C8B4",
+        },
+        // Backwards compatibility aliases for existing components
+        canvas: {
+          DEFAULT: "#F1F0E9",
+          pure: "#FFFFFF",
+          soft: "#E7E9E1",
+          border: "#D8DDD4",
+          borderSoft: "#E2E6DF",
+          dark: "#202923",
+          darkCard: "#193A2D",
         },
       },
       fontFamily: {
@@ -44,11 +62,11 @@ const config: Config = {
         mono: ["var(--font-jetbrains)", "monospace"],
       },
       boxShadow: {
-        soft: "0 4px 20px -2px rgba(32, 41, 35, 0.04), 0 2px 6px -1px rgba(32, 41, 35, 0.02)",
-        card: "0 10px 30px -4px rgba(32, 41, 35, 0.06), 0 4px 12px -2px rgba(32, 41, 35, 0.03)",
-        elevated: "0 20px 40px -6px rgba(32, 41, 35, 0.08), 0 8px 16px -4px rgba(32, 41, 35, 0.04)",
-        glowGreen: "0 0 35px -5px rgba(167, 212, 111, 0.35)",
-        pill: "0 2px 10px rgba(32, 41, 35, 0.04)",
+        soft: "0 2px 10px -1px rgba(32, 41, 35, 0.05), 0 1px 3px -1px rgba(32, 41, 35, 0.03)",
+        card: "0 10px 25px -4px rgba(32, 41, 35, 0.07), 0 4px 10px -2px rgba(32, 41, 35, 0.04)",
+        elevated: "0 20px 40px -6px rgba(32, 41, 35, 0.10), 0 8px 16px -4px rgba(32, 41, 35, 0.05)",
+        darkCard: "0 20px 40px -8px rgba(0, 0, 0, 0.35), 0 8px 16px -4px rgba(0, 0, 0, 0.20)",
+        limeGlow: "0 0 25px -2px rgba(183, 216, 120, 0.45)",
       },
       borderRadius: {
         "3xl": "1.75rem",

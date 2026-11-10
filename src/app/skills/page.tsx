@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { SKILL_CATEGORIES } from '@/data/portfolioData';
-import { Cpu, Terminal, Sparkles, CheckCircle2, ShieldCheck, Layers, GitBranch } from 'lucide-react';
+import { Terminal, Sparkles, Layers, Cpu, Code2, Globe2, ShieldCheck, GitBranch } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Technical Skills & Architecture — Arif Mahmood',
@@ -9,22 +9,15 @@ export const metadata: Metadata = {
 };
 
 export default function SkillsPage() {
-  const categoryPastels = [
-    { badge: 'bg-pastel-lavender/60 text-indigo-950 border-indigo-200/60', icon: Layers },
-    { badge: 'bg-pastel-peach/60 text-amber-950 border-amber-200/60', icon: Cpu },
-    { badge: 'bg-accent-moss/30 text-forest-950 border-forest-300/60', icon: Terminal },
-    { badge: 'bg-canvas-soft text-forest-900 border-canvas-border', icon: GitBranch },
-    { badge: 'bg-pastel-lavender/40 text-indigo-950 border-indigo-200/50', icon: ShieldCheck },
-    { badge: 'bg-pastel-peach/40 text-amber-950 border-amber-200/50', icon: Sparkles },
-  ];
+  const categoryIcons = [Layers, Cpu, Terminal, GitBranch, ShieldCheck, Sparkles];
 
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 space-y-16">
       
       {/* Header Section */}
-      <div className="border-b border-canvas-border pb-8 space-y-4">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-canvas-soft border border-canvas-border text-xs font-mono font-medium text-forest-800">
-          <Sparkles className="w-3.5 h-3.5 text-forest-700" />
+      <div className="border-b border-surface-border pb-8 space-y-4">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-soft border border-surface-border text-xs font-mono font-medium text-ink-forest font-bold">
+          <Sparkles className="w-3.5 h-3.5 text-accent-forest" />
           <span>Technical Stack & Ecosystem</span>
         </div>
         <h1 className="text-4xl sm:text-6xl font-display font-extrabold text-ink-primary tracking-tight">
@@ -35,29 +28,46 @@ export default function SkillsPage() {
         </p>
       </div>
 
-      {/* Grid of Skill Categories */}
+      {/* Grid of Skill Categories: Balanced 4 Light / 2 Deep Contrast Rhythm */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {SKILL_CATEGORIES.map((cat, idx) => {
-          const style = categoryPastels[idx % categoryPastels.length];
-          const Icon = style.icon;
+          const isDark = idx === 0 || idx === 3; // Strategic visual anchor cards
+          const Icon = categoryIcons[idx % categoryIcons.length];
+
           return (
             <section
               key={idx}
-              className="bg-canvas-pure border border-canvas-border hover:border-forest-300 rounded-3xl p-6 sm:p-8 space-y-6 shadow-elevated transition-all"
+              className={`rounded-3xl p-6 sm:p-8 space-y-6 transition-all border ${
+                isDark
+                  ? 'bg-surface-forest border-surface-borderDark text-surface-pure shadow-darkCard'
+                  : 'bg-surface-pure border-surface-border text-ink-primary shadow-card hover:shadow-elevated'
+              }`}
             >
-              <div className="flex items-start justify-between gap-3 border-b border-canvas-border pb-4">
+              <div className={`flex items-start justify-between gap-3 border-b pb-4 ${
+                isDark ? 'border-surface-borderDark' : 'border-surface-border'
+              }`}>
                 <div className="space-y-1">
-                  <span className="text-xs font-mono text-forest-700 font-bold uppercase tracking-wider">
+                  <span className={`text-xs font-mono font-bold uppercase tracking-wider ${
+                    isDark ? 'text-accent-lime' : 'text-ink-forest'
+                  }`}>
                     CATEGORY 0{idx + 1}
                   </span>
-                  <h2 className="text-xl sm:text-2xl font-display font-bold text-ink-primary">
+                  <h2 className={`text-xl sm:text-2xl font-display font-bold ${
+                    isDark ? 'text-surface-pure' : 'text-ink-primary'
+                  }`}>
                     {cat.category}
                   </h2>
-                  <p className="text-xs text-ink-secondary leading-relaxed">
+                  <p className={`text-xs leading-relaxed ${
+                    isDark ? 'text-ink-onDarkMuted' : 'text-ink-secondary'
+                  }`}>
                     {cat.tagline}
                   </p>
                 </div>
-                <div className={`p-2.5 rounded-2xl border ${style.badge}`}>
+                <div className={`p-2.5 rounded-2xl border ${
+                  isDark 
+                    ? 'bg-surface-forestDark border-accent-lime/40 text-accent-lime' 
+                    : 'bg-surface-soft border-surface-border text-accent-forest'
+                }`}>
                   <Icon className="w-5 h-5" />
                 </div>
               </div>
@@ -66,15 +76,21 @@ export default function SkillsPage() {
                 {cat.skills.map((skill) => (
                   <div
                     key={skill.name}
-                    className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-mono font-medium transition-all ${
+                    className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-mono font-semibold transition-all ${
                       skill.highlight
-                        ? 'bg-forest-900 text-white shadow-sm'
-                        : 'bg-canvas-soft text-ink-primary border border-canvas-border hover:bg-canvas'
+                        ? isDark
+                          ? 'bg-accent-lime text-surface-forest font-bold shadow-sm'
+                          : 'bg-surface-forest text-surface-pure font-bold shadow-sm'
+                        : isDark
+                          ? 'bg-surface-forestDark border border-surface-borderDark text-ink-onDarkMuted'
+                          : 'bg-surface-soft text-ink-primary border border-surface-border'
                     }`}
                   >
                     <span
                       className={`w-1.5 h-1.5 rounded-full ${
-                        skill.highlight ? 'bg-accent-moss' : 'bg-forest-500'
+                        skill.highlight 
+                          ? isDark ? 'bg-surface-forest' : 'bg-accent-lime'
+                          : isDark ? 'bg-accent-lime/60' : 'bg-ink-forest'
                       }`}
                     />
                     <span>{skill.name}</span>
@@ -86,13 +102,13 @@ export default function SkillsPage() {
         })}
       </div>
 
-      {/* Engineering Philosophy Notice */}
-      <div className="bg-canvas-soft border border-canvas-border rounded-3xl p-6 sm:p-8 space-y-4">
-        <h3 className="text-lg font-display font-bold text-ink-primary flex items-center gap-2.5">
-          <Terminal className="w-5 h-5 text-forest-700" />
+      {/* Engineering Philosophy Notice: Deep Charcoal Contrast Block */}
+      <div className="bg-surface-charcoal border border-surface-borderCharcoal text-surface-pure rounded-3xl p-6 sm:p-8 space-y-4 shadow-darkCard">
+        <h3 className="text-lg font-display font-bold text-surface-pure flex items-center gap-2.5">
+          <Terminal className="w-5 h-5 text-accent-lime" />
           <span>Core Engineering Philosophy</span>
         </h3>
-        <p className="text-sm sm:text-base text-ink-secondary leading-relaxed">
+        <p className="text-sm sm:text-base text-ink-onDarkMuted leading-relaxed">
           Technology choices are driven by business requirements, performance criteria, and long-term maintainability. Rather than chasing fleeting framework trends, solutions prioritize battle-tested architectures: Next.js and TypeScript for reactive client applications, Laravel and Node.js for robust APIs, and customized WordPress engines for seamless content authoring.
         </p>
       </div>
