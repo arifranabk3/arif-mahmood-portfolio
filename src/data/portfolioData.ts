@@ -57,7 +57,10 @@ export const PERSONAL_INFO = {
   },
   cvFileName: 'Arif-Mahmood-CV.pdf',
   cvPath: '/Arif-Mahmood-CV.pdf',
-  avatarUrl: '/arif-mahmood.jpg',
+  avatarUrl: '/nav-avatar.jpg',
+  heroImageUrl: '/hero-portrait.jpg',
+  aboutImageUrl: '/about-portrait.jpg',
+  cardImageUrl: '/arif-mahmood.jpg',
   github: 'https://github.com/arifranabk3',
   headline: 'Building Digital Products That Solve Real Business Problems.',
   supportingText:

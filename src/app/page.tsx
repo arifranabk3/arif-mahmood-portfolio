@@ -175,7 +175,7 @@ export default function RedesignedHomePage() {
                 {/* Visual Image Presentation */}
                 <div className="relative aspect-[4/4.3] w-full rounded-2xl overflow-hidden bg-bg-dark border border-white/5">
                   <img
-                    src={PERSONAL_INFO.avatarUrl}
+                    src={PERSONAL_INFO.heroImageUrl}
                     alt="Arif Mahmood — AI-Powered Full-Stack Developer"
                     className="w-full h-full object-cover object-top filter brightness-[1.03] contrast-[1.02] group-hover:scale-[1.02] transition-transform duration-500"
                   />

@@ -66,7 +66,7 @@ export default function AboutPage() {
           <div className="bg-charcoal-900 border border-charcoal-800 rounded-3xl p-4 shadow-editorial overflow-hidden">
             <div className="relative w-full aspect-[4/4.5] rounded-2xl overflow-hidden bg-charcoal-950 border border-charcoal-800">
               <img
-                src={PERSONAL_INFO.avatarUrl}
+                src={PERSONAL_INFO.aboutImageUrl}
                 alt="Arif Mahmood"
                 className="w-full h-full object-cover object-top"
               />
