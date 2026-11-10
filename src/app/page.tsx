@@ -728,7 +728,7 @@ export default function RedesignedLightHomePage() {
       {/* =========================================================================
           06 — SELECTED CLIENT WORK: White Surface Cards on Warm Neutral Canvas
       ========================================================================= */}
-      <section id="client-work" className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-12">
+      <section id="client-work" className="pt-20 sm:pt-24 pb-8 sm:pb-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-12">
         
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 border-b border-surface-border pb-8">
           <div className="space-y-3">
@@ -795,7 +795,7 @@ export default function RedesignedLightHomePage() {
       {/* =========================================================================
           07 — CLOSING CTA: Dark Charcoal High-Contrast Callout
       ========================================================================= */}
-      <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <section className="pt-8 sm:pt-12 pb-20 sm:pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="rounded-4xl bg-surface-charcoal border border-surface-borderCharcoal p-8 sm:p-14 lg:p-20 text-center space-y-8 relative overflow-hidden shadow-darkCard">
           
           <div className="absolute inset-0 dark-dot-grid pointer-events-none opacity-30" />
