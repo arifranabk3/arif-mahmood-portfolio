@@ -47,7 +47,7 @@ const fadeIn: Variants = {
 };
 
 export default function RedesignedLightHomePage() {
-  const featuredProjects = PROJECTS.slice(0, 3);
+  const featuredProjects = PROJECTS.filter((p) => p.featured);
   const selectedClients = CLIENT_WEBSITES.slice(0, 6);
 
   return (
@@ -250,7 +250,7 @@ export default function RedesignedLightHomePage() {
               Featured Case Studies
             </h2>
             <p className="text-sm sm:text-base text-ink-secondary max-w-2xl leading-relaxed">
-              Production-grade automotive marketplaces, multi-tenant digital commerce, and corporate applicant tracking systems engineered from architecture to interface.
+              Autonomous AI systems, production-grade automotive marketplaces, multi-tenant digital commerce, and corporate applicant tracking systems engineered from architecture to interface.
             </p>
           </div>
 
@@ -258,7 +258,7 @@ export default function RedesignedLightHomePage() {
             href="/projects"
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-canvas-pure hover:bg-canvas-soft border border-canvas-border text-xs font-mono text-accent-greenDark font-bold transition-all shadow-soft self-start sm:self-auto"
           >
-            <span>View All 8 Platforms</span>
+            <span>View All 9 Platforms</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </Link>
         </div>
