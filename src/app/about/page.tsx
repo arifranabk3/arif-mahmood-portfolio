@@ -120,15 +120,15 @@ export default function AboutPage() {
                 priority
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-60" />
-              <div className="absolute bottom-4 left-4 right-4 bg-surface-pure/94 backdrop-blur-md p-3.5 rounded-xl border border-surface-border shadow-sm flex items-center justify-between">
+              <div className="absolute bottom-4 left-4 right-4 bg-surface-charcoal p-3.5 rounded-xl border border-surface-borderCharcoal shadow-xl flex items-center justify-between">
                 <div>
-                  <p className="text-[10px] font-mono text-ink-muted uppercase">Base Location</p>
-                  <p className="text-sm font-bold text-ink-primary flex items-center gap-1.5">
-                    <MapPin className="w-3.5 h-3.5 text-accent-forest" />
+                  <p className="text-[10px] font-mono text-ink-onDarkMuted uppercase">Base Location</p>
+                  <p className="text-sm font-bold text-surface-pure flex items-center gap-1.5">
+                    <MapPin className="w-3.5 h-3.5 text-accent-lime" />
                     <span>{PERSONAL_INFO.location}</span>
                   </p>
                 </div>
-                <span className="px-3 py-1 rounded-full bg-surface-forest text-accent-lime text-xs font-mono font-bold">
+                <span className="px-3 py-1 rounded-full bg-accent-lime text-surface-forest text-xs font-mono font-bold">
                   13+ Yrs
                 </span>
               </div>

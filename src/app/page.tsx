@@ -176,13 +176,13 @@ export default function RedesignedLightHomePage() {
                     priority
                   />
                   
-                  {/* Floating Glass Pill */}
-                  <div className="absolute bottom-3.5 left-3.5 right-3.5 p-3.5 rounded-2xl bg-surface-pure/94 backdrop-blur-md border border-surface-border shadow-card flex items-center justify-between">
+                  {/* Floating Glass Pill — Solid High-Contrast Background */}
+                  <div className="absolute bottom-3.5 left-3.5 right-3.5 p-3.5 rounded-2xl bg-surface-charcoal border border-surface-borderCharcoal shadow-xl flex items-center justify-between">
                     <div>
-                      <p className="text-xs font-display font-bold text-ink-primary">Arif Mahmood</p>
-                      <p className="text-[10px] font-mono text-ink-secondary">Islamabad, PK · Available for Hire</p>
+                      <p className="text-xs font-display font-bold text-surface-pure tracking-tight">Arif Mahmood</p>
+                      <p className="text-[10px] font-mono text-ink-onDarkMuted">Islamabad, PK · Available for Hire</p>
                     </div>
-                    <span className="text-[11px] font-mono font-bold text-surface-pure bg-surface-forest px-3 py-1 rounded-lg border border-surface-forestDark">
+                    <span className="text-[11px] font-mono font-bold text-surface-forest bg-accent-lime px-3 py-1 rounded-lg shadow-sm">
                       13+ Yrs
                     </span>
                   </div>
