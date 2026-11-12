@@ -398,6 +398,13 @@ export const PROJECTS: ProjectItem[] = [
 export const CLIENT_WEBSITES: ClientWebsite[] = [
   // Business & Corporate
   {
+    name: 'Actlion Solutions',
+    url: 'https://actlionsolutions.com',
+    category: 'Business & Corporate',
+    description: 'US-based IT delivery consultancy, network infrastructure deployment, and enterprise project advisory services.',
+    role: 'Custom Web Design, WordPress Development & Performance Optimization',
+  },
+  {
     name: 'OVEX IT Solutions',
     url: 'https://ovexsol.com',
     category: 'Business & Corporate',
