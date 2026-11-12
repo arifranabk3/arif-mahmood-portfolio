@@ -69,9 +69,47 @@ export const PERSONAL_INFO = {
 
 export const PROJECTS: ProjectItem[] = [
   {
+    id: 'fleetos',
+    slug: 'fleetos',
+    number: '01',
+    title: 'FLEETOS ENTERPRISE',
+    tagline: 'Multi-Tenant Fleet Logistics, Telemetry & Driver Intelligence SaaS',
+    category: 'Enterprise ERP',
+    status: 'Live',
+    description:
+      'An enterprise-grade multi-tenant logistics and fleet operations platform featuring real-time OpenStreetMap/Leaflet vehicle telemetry, Composite Performance Score (CPS) driver analytics, shift payroll reconciliation, fuel fraud detection, and automated maintenance lifecycles.',
+    challenge:
+      'Enterprise fleet operators face fragmented telemetry, unverified driver safety records, cross-tenant data leakage risks, and inaccurate manual driver settlement calculations.',
+    solution:
+      'Architected a strictly isolated multi-tenant SaaS with BaseTenantRepository enforcement, real-time geospatial vector tracking, a 4-pillar weighted Driver Analytics Engine (Safety, Timeliness, Hours, Compliance), and 262 automated security & unit tests.',
+    architecture: [
+      'Next.js 14 App Router with SSR-safe Leaflet Geospatial Vector Engine & Tailwind CSS',
+      'Express & TypeScript REST API with strict BaseTenantRepository tenant scoping',
+      'Weighted 40/30/20/10 Composite Performance Score (CPS) aggregation pipelines',
+      '262 automated enterprise tests across 15 suites verifying RBAC, IDOR & tenant isolation',
+    ],
+    techStack: ['Next.js', 'React', 'TypeScript', 'Node.js', 'Express.js', 'MongoDB', 'Leaflet', 'Tailwind CSS'],
+    features: [
+      'Live Operations & Geospatial Telemetry Center with interactive geofence overlays',
+      '4-Pillar Driver Analytics Engine (Safety 40%, Delivery 30%, Shifts 20%, Compliance 10%)',
+      'Strict multi-tenant data isolation with cryptographic refresh token rotation',
+      'Automated shipment dispatch, proof-of-delivery (POD), and route state machines',
+      'Fuel transaction ledger with anomaly detection and preventative maintenance scheduling',
+      'Role-Based Access Control (Owner, Fleet Manager, Dispatcher, Driver, Accountant)',
+    ],
+    liveUrl: 'https://fleetos-enterprise-tau.vercel.app/',
+    githubUrl: 'https://github.com/arifranabk3/fleetos-enterprise',
+    metrics: [
+      { label: 'Test Coverage', value: '262 Automated Tests' },
+      { label: 'Architecture', value: 'Multi-Tenant RBAC' },
+      { label: 'App Routes', value: '33 Compiled Routes' },
+    ],
+    featured: true,
+  },
+  {
     id: 'autoverse',
     slug: 'autoverse',
-    number: '01',
+    number: '02',
     title: 'AUTOVERSE',
     tagline: 'Premium Automotive Marketplace Platform',
     category: 'Full-Stack Web App',
@@ -110,7 +148,7 @@ export const PROJECTS: ProjectItem[] = [
   {
     id: 'sellzy',
     slug: 'sellzy',
-    number: '02',
+    number: '03',
     title: 'SELLZY',
     tagline: 'Multi-Tenant E-Commerce SaaS Platform',
     category: 'SaaS Platform',
@@ -147,7 +185,7 @@ export const PROJECTS: ProjectItem[] = [
   {
     id: 'talentflow',
     slug: 'talentflow',
-    number: '03',
+    number: '04',
     title: 'TALENTFLOW',
     tagline: 'Recruitment & Applicant Tracking System (ATS)',
     category: 'Enterprise ERP',
@@ -186,7 +224,7 @@ export const PROJECTS: ProjectItem[] = [
   {
     id: 'ai-software',
     slug: 'ai-software',
-    number: '04',
+    number: '05',
     title: 'AISOFTWARE',
     tagline: 'Autonomous Systems & AI Engineering Publication',
     category: 'Developer Tool',
@@ -229,7 +267,7 @@ export const PROJECTS: ProjectItem[] = [
   {
     id: 'contentsphere',
     slug: 'contentsphere',
-    number: '05',
+    number: '06',
     title: 'CONTENTSPHERE',
     tagline: 'Headless CMS & Content API Platform',
     category: 'Developer Tool',
@@ -262,7 +300,7 @@ export const PROJECTS: ProjectItem[] = [
   {
     id: 'clientflow',
     slug: 'clientflow',
-    number: '06',
+    number: '07',
     title: 'CLIENTFLOW',
     tagline: 'CRM & Sales Automation Engine',
     category: 'SaaS Platform',
@@ -295,7 +333,7 @@ export const PROJECTS: ProjectItem[] = [
   {
     id: 'worksync',
     slug: 'worksync',
-    number: '07',
+    number: '08',
     title: 'WORKSYNC',
     tagline: 'Project Management & Team Collaboration Platform',
     category: 'Full-Stack Web App',
@@ -328,7 +366,7 @@ export const PROJECTS: ProjectItem[] = [
   {
     id: 'stockpilot',
     slug: 'stockpilot',
-    number: '08',
+    number: '09',
     title: 'STOCKPILOT',
     tagline: 'Inventory & Warehouse ERP System',
     category: 'Enterprise ERP',
@@ -362,7 +400,7 @@ export const PROJECTS: ProjectItem[] = [
   {
     id: 'seoaudit-pro',
     slug: 'seoaudit-pro',
-    number: '09',
+    number: '10',
     title: 'SEOAUDIT PRO',
     tagline: 'Technical SEO Audit & Health SaaS',
     category: 'Developer Tool',

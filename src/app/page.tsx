@@ -196,7 +196,7 @@ export default function RedesignedLightHomePage() {
                     <p className="text-[10px] font-mono text-ink-secondary uppercase tracking-wider mt-0.5 font-medium">Years Experience</p>
                   </div>
                   <div className="p-3.5 rounded-2xl bg-surface-soft border border-surface-borderSoft text-center">
-                    <p className="text-2xl font-display font-extrabold text-ink-primary">09</p>
+                    <p className="text-2xl font-display font-extrabold text-ink-primary">10</p>
                     <p className="text-[10px] font-mono text-ink-secondary uppercase tracking-wider mt-0.5 font-medium">Software Assets</p>
                   </div>
                 </div>
@@ -247,9 +247,9 @@ export default function RedesignedLightHomePage() {
             <p className="text-xs text-ink-muted">Active since 2013 across high-velocity teams.</p>
           </div>
           <div className="space-y-1">
-            <p className="text-3xl sm:text-4xl font-display font-extrabold text-ink-primary">9 Platforms</p>
+            <p className="text-3xl sm:text-4xl font-display font-extrabold text-ink-primary">10 Platforms</p>
             <p className="text-xs font-mono text-ink-secondary uppercase tracking-wider font-semibold">Independent Products</p>
-            <p className="text-xs text-ink-muted">Automotive, ATS, SaaS & Autonomous AI.</p>
+            <p className="text-xs text-ink-muted">FleetOS, Automotive, ATS, SaaS &amp; AI.</p>
           </div>
           <div className="space-y-1">
             <p className="text-3xl sm:text-4xl font-display font-extrabold text-ink-forest">20+ Clients</p>
@@ -259,7 +259,7 @@ export default function RedesignedLightHomePage() {
           <div className="space-y-1">
             <p className="text-3xl sm:text-4xl font-display font-extrabold text-ink-primary">100% Core Web</p>
             <p className="text-xs font-mono text-ink-secondary uppercase tracking-wider font-semibold">Performance Rigor</p>
-            <p className="text-xs text-ink-muted">Sub-second LCP & accessibility compliance.</p>
+            <p className="text-xs text-ink-muted">Sub-second LCP &amp; accessibility compliance.</p>
           </div>
         </div>
       </section>
@@ -279,7 +279,7 @@ export default function RedesignedLightHomePage() {
               Featured Case Studies
             </h2>
             <p className="text-sm sm:text-base text-ink-secondary max-w-2xl leading-relaxed">
-              Autonomous AI systems, production-grade automotive marketplaces, multi-tenant digital commerce, and corporate applicant tracking systems engineered from architecture to interface.
+              Multi-tenant fleet intelligence, autonomous AI systems, production-grade automotive marketplaces, and corporate applicant tracking systems engineered from architecture to interface.
             </p>
           </div>
 
@@ -287,7 +287,7 @@ export default function RedesignedLightHomePage() {
             href="/projects"
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-surface-pure hover:bg-surface-soft border border-surface-border text-xs font-mono text-ink-forest font-bold transition-all shadow-soft self-start sm:self-auto"
           >
-            <span>View All 9 Platforms</span>
+            <span>View All 10 Platforms</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </Link>
         </div>

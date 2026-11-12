@@ -77,11 +77,11 @@ export const Footer: React.FC = () => {
           <div className="space-y-3">
             <p className="font-mono text-accent-lime font-bold tracking-wider uppercase text-[11px]">Featured Platforms</p>
             <ul className="space-y-2.5 text-ink-onDarkMuted">
-              <li><Link href="/projects/autoverse" className="hover:text-surface-pure transition-colors">01. AUTOVERSE (Live)</Link></li>
-              <li><Link href="/projects/sellzy" className="hover:text-surface-pure transition-colors">02. SELLZY (Dev)</Link></li>
-              <li><Link href="/projects/talentflow" className="hover:text-surface-pure transition-colors">03. TALENTFLOW (Dev)</Link></li>
+              <li><Link href="/projects/fleetos" className="hover:text-surface-pure transition-colors">01. FLEETOS ENTERPRISE (Live)</Link></li>
+              <li><Link href="/projects/autoverse" className="hover:text-surface-pure transition-colors">02. AUTOVERSE (Live)</Link></li>
+              <li><Link href="/projects/talentflow" className="hover:text-surface-pure transition-colors">03. TALENTFLOW (Live)</Link></li>
               <li><Link href="/projects/ai-software" className="hover:text-surface-pure transition-colors">04. AISOFTWARE (Live)</Link></li>
-              <li><Link href="/projects" className="hover:text-accent-lime transition-colors font-bold text-accent-lime">View All 9 Platforms →</Link></li>
+              <li><Link href="/projects" className="hover:text-accent-lime transition-colors font-bold text-accent-lime">View All 10 Platforms →</Link></li>
             </ul>
           </div>
 

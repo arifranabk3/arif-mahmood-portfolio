@@ -6,7 +6,7 @@ import { PROJECTS } from '@/data/portfolioData';
 export const metadata: Metadata = {
   title: 'Projects & Case Studies — Arif Mahmood',
   description:
-    'Nine independent software engineering projects spanning autonomous AI systems, automotive marketplaces, multi-tenant e-commerce platforms, applicant tracking systems, and developer tools.',
+    'Ten independent software engineering projects spanning multi-tenant fleet intelligence, autonomous AI systems, automotive marketplaces, multi-tenant e-commerce platforms, applicant tracking systems, and developer tools.',
 };
 
 export default function ProjectsPage() {
@@ -23,7 +23,7 @@ export default function ProjectsPage() {
           Independent Software Projects
         </h1>
         <p className="text-base sm:text-lg text-ink-secondary max-w-3xl leading-relaxed">
-          A collection of nine distinct products built with modern full-stack architectures. Each project features its own visual identity, data isolation, and deployment lifecycle.
+          A collection of ten distinct products built with modern full-stack architectures. Each project features its own visual identity, data isolation, and deployment lifecycle.
         </p>
       </div>
 
