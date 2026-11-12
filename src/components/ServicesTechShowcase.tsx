@@ -199,24 +199,23 @@ export default function ServicesTechShowcase() {
       <div className="relative pt-5">
         {/* Top Centered Pill Badge */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 z-10">
-          <div className="px-8 py-2 rounded-full bg-ink-primary text-surface-pure font-display font-bold text-sm sm:text-base tracking-wide shadow-card whitespace-nowrap border-2 border-surface-pure flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-accent-lime animate-pulse" />
-            <span>My Services &amp; Technologies</span>
+          <div className="px-7 py-2 rounded-full bg-ink-primary text-surface-pure font-display font-bold text-sm sm:text-base tracking-wide shadow-md whitespace-nowrap border border-ink-primary">
+            My Services &amp; Technologies
           </div>
         </div>
 
         {/* Main Outlined Rounded Box with Vertical Dividers */}
-        <div className="bg-surface-pure border-2 border-ink-primary/85 rounded-3xl px-4 sm:px-6 pt-10 pb-7 shadow-elevated hover:border-ink-primary transition-all duration-300">
+        <div className="bg-surface-pure border-2 border-ink-primary/80 rounded-3xl px-4 sm:px-6 pt-9 pb-7 shadow-card">
           <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 divide-y sm:divide-y-0 sm:divide-x divide-surface-border">
             {CORE_SERVICES_ROW.map((item) => (
               <div
                 key={item.id}
-                className="group flex flex-col items-center justify-start text-center px-3 py-3 sm:py-2 transition-all duration-300 hover:-translate-y-1.5"
+                className="group flex flex-col items-center justify-start text-center px-3 py-3 sm:py-2 transition-transform duration-200 hover:-translate-y-1"
               >
-                <div className="w-14 h-14 rounded-2xl bg-surface-soft/60 group-hover:bg-accent-lime/20 border border-transparent group-hover:border-accent-lime/50 flex items-center justify-center mb-3 transition-all duration-300 group-hover:scale-110 group-hover:shadow-soft">
+                <div className="h-12 flex items-center justify-center mb-3 transition-transform duration-200 group-hover:scale-110">
                   {item.icon}
                 </div>
-                <p className="text-xs sm:text-[13px] font-display font-bold text-ink-primary group-hover:text-ink-forest leading-snug transition-colors">
+                <p className="text-xs sm:text-[13px] font-display font-semibold text-ink-primary leading-snug">
                   {item.label}
                 </p>
               </div>
@@ -229,24 +228,23 @@ export default function ServicesTechShowcase() {
       <div className="relative pt-5">
         {/* Top Centered Pill Badge */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 z-10">
-          <div className="px-8 py-2 rounded-full bg-surface-forest text-surface-pure font-display font-bold text-sm sm:text-base tracking-wide shadow-card whitespace-nowrap border-2 border-surface-pure flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-accent-lime" />
-            <span>Core Full-Stack, UI/UX &amp; AI Engineering Stack</span>
+          <div className="px-7 py-2 rounded-full bg-surface-forest text-surface-pure font-display font-bold text-sm sm:text-base tracking-wide shadow-md whitespace-nowrap border border-surface-forestDark">
+            Core Full-Stack, UI/UX &amp; AI Engineering Stack
           </div>
         </div>
 
         {/* Main Outlined Rounded Box with Vertical Dividers */}
-        <div className="bg-surface-pure border-2 border-surface-forest/85 rounded-3xl px-4 sm:px-6 pt-10 pb-7 shadow-elevated hover:border-surface-forest transition-all duration-300">
+        <div className="bg-surface-pure border-2 border-surface-forest/80 rounded-3xl px-4 sm:px-6 pt-9 pb-7 shadow-card">
           <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 divide-y sm:divide-y-0 sm:divide-x divide-surface-border">
             {TECH_STACK_ROW.map((item) => (
               <div
                 key={item.id}
-                className="group flex flex-col items-center justify-start text-center px-3 py-3 sm:py-2 transition-all duration-300 hover:-translate-y-1.5"
+                className="group flex flex-col items-center justify-start text-center px-3 py-3 sm:py-2 transition-transform duration-200 hover:-translate-y-1"
               >
-                <div className="w-14 h-14 rounded-2xl bg-surface-soft/60 group-hover:bg-accent-lime/20 border border-transparent group-hover:border-accent-lime/50 flex items-center justify-center mb-3 transition-all duration-300 group-hover:scale-110 group-hover:shadow-soft">
+                <div className="h-12 flex items-center justify-center mb-3 transition-transform duration-200 group-hover:scale-110">
                   {item.icon}
                 </div>
-                <p className="text-xs sm:text-[13px] font-display font-bold text-ink-primary group-hover:text-ink-forest leading-snug transition-colors">
+                <p className="text-xs sm:text-[13px] font-display font-semibold text-ink-primary leading-snug">
                   {item.label}
                 </p>
               </div>

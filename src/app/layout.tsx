@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { Inter, JetBrains_Mono, Syne } from 'next/font/google';
+import { Inter, JetBrains_Mono } from 'next/font/google';
 import '@/app/globals.css';
 import { Navigation } from '@/components/layout/Navigation';
 import { Footer } from '@/components/layout/Footer';
@@ -8,13 +8,6 @@ import { PERSONAL_INFO } from '@/data/portfolioData';
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
-  display: 'swap',
-});
-
-const syne = Syne({
-  subsets: ['latin'],
-  weight: ['700', '800'],
-  variable: '--font-syne',
   display: 'swap',
 });
 
@@ -111,14 +104,14 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" className={`${inter.variable} ${syne.variable} ${jetbrains.variable}`}>
+    <html lang="en" className={`${inter.variable} ${jetbrains.variable}`}>
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personStructuredData) }}
         />
       </head>
-      <body className="bg-surface-canvas text-ink-primary font-sans antialiased min-h-screen flex flex-col selection:bg-accent-lime selection:text-surface-forest">
+      <body className="bg-canvas text-ink-primary font-sans antialiased min-h-screen flex flex-col selection:bg-accent-green selection:text-canvas-dark">
         <Navigation />
         <main className="flex-1 pt-20">{children}</main>
         <Footer />
