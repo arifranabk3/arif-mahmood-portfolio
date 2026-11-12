@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, Sparkles, Layers, Cpu, Code2, Globe2 } from 'lucide-react';
 import { SERVICES } from '@/data/portfolioData';
+import ServicesTechShowcase from '@/components/ServicesTechShowcase';
 
 export const metadata: Metadata = {
   title: 'Services & Engineering Capabilities — Arif Mahmood',
@@ -28,6 +29,9 @@ export default function ServicesPage() {
           High-precision development services for international remote engineering teams, fast-growing software companies, and bespoke digital clients.
         </p>
       </div>
+
+      {/* Interactive Services & Technologies Visual Showcase */}
+      <ServicesTechShowcase />
 
       {/* Services Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

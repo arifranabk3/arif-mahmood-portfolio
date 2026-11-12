@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { SKILL_CATEGORIES } from '@/data/portfolioData';
 import { Terminal, Sparkles, Layers, Cpu, Code2, Globe2, ShieldCheck, GitBranch } from 'lucide-react';
+import ServicesTechShowcase from '@/components/ServicesTechShowcase';
 
 export const metadata: Metadata = {
   title: 'Technical Skills & Architecture — Arif Mahmood',
@@ -27,6 +28,9 @@ export default function SkillsPage() {
           Categorized overview of frontend, backend, CMS, and AI workflows actively utilized in production environments. Grounded strictly in verified CV experience without fabricated proficiency percentages.
         </p>
       </div>
+
+      {/* Visual Services & Tech Stack Banner */}
+      <ServicesTechShowcase />
 
       {/* Grid of Skill Categories: Balanced 4 Light / 2 Deep Contrast Rhythm */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

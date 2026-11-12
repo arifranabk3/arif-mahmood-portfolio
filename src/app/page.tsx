@@ -29,6 +29,7 @@ import {
   EXPERIENCES, 
   CLIENT_WEBSITES 
 } from '@/data/portfolioData';
+import ServicesTechShowcase from '@/components/ServicesTechShowcase';
 
 const fadeIn: Variants = {
   hidden: { opacity: 0, y: 20 },
@@ -229,6 +230,11 @@ export default function RedesignedLightHomePage() {
         </motion.div>
 
       </section>
+
+      {/* =========================================================================
+          01.5 — MY SERVICES & TECHNOLOGIES SHOWCASE BANNER
+      ========================================================================= */}
+      <ServicesTechShowcase />
 
       {/* =========================================================================
           02 — INTRODUCTION & CREDIBILITY BAND: White High-Contrast Metric Strip
