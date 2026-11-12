@@ -602,7 +602,6 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
       { name: 'WordPress', highlight: true },
       { name: 'Shopify', highlight: true },
       { name: 'Webflow', highlight: true },
-      { name: 'Squarespace', highlight: true },
       { name: 'Wix', highlight: true },
       { name: 'WooCommerce', highlight: true },
       { name: 'Custom Themes', highlight: true },

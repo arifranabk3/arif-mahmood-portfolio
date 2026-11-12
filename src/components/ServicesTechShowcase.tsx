@@ -47,26 +47,6 @@ const CORE_SERVICES_ROW: TechServiceItem[] = [
     ),
   },
   {
-    id: 'squarespace',
-    label: 'Squarespace Development',
-    icon: (
-      <svg viewBox="0 0 48 48" className="w-10 h-10" fill="none">
-        <path
-          d="M13.5 27.5l10.2-10.2c2.2-2.2 5.8-2.2 8 0s2.2 5.8 0 8L21.5 35.5c-2.2 2.2-5.8 2.2-8 0-1.1-1.1-1.6-2.5-1.6-4m22.6-11l-10.2 10.2c-2.2 2.2-5.8 2.2-8 0s-2.2-5.8 0-8l10.2-10.2c2.2-2.2 5.8-2.2 8 0 1.1 1.1 1.6 2.5 1.6 4"
-          stroke="#111827"
-          strokeWidth="3.5"
-          strokeLinecap="round"
-        />
-        <path
-          d="M9.5 21.5l12-12c3.5-3.5 9.2-3.5 12.7 0M38.5 26.5l-12 12c-3.5 3.5-9.2 3.5-12.7 0"
-          stroke="#111827"
-          strokeWidth="3.5"
-          strokeLinecap="round"
-        />
-      </svg>
-    ),
-  },
-  {
     id: 'wix',
     label: 'Wix Development',
     icon: (
@@ -226,7 +206,7 @@ export default function ServicesTechShowcase() {
 
         {/* Main Outlined Rounded Box with Vertical Dividers */}
         <div className="bg-surface-pure border-2 border-ink-primary/80 rounded-3xl px-4 sm:px-6 pt-9 pb-7 shadow-card">
-          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 divide-y sm:divide-y-0 sm:divide-x divide-surface-border">
+          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 divide-y sm:divide-y-0 sm:divide-x divide-surface-border">
             {CORE_SERVICES_ROW.map((item) => (
               <div
                 key={item.id}
