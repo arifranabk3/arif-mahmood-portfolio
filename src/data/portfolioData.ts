@@ -455,29 +455,8 @@ export const CLIENT_WEBSITES: ClientWebsite[] = [
     description: 'Online consumer retail shop featuring curated product collections.',
     role: 'WooCommerce Integration & Checkout Flow Optimization',
   },
-  {
-    name: 'Expat Prime',
-    url: 'https://expatprime.tv',
-    category: 'E-commerce',
-    description: 'Digital media streaming subscriptions and international service packages.',
-    role: 'Front-End Development & Subscription Integration',
-  },
 
   // Healthcare, Security & Professional Services
-  {
-    name: 'Jodie Rosen',
-    url: 'https://jodierosen.com',
-    category: 'Healthcare & Services',
-    description: 'High-end interior design and architectural portfolio showcase.',
-    role: 'Custom Portfolio Engineering & Visual Polish',
-  },
-  {
-    name: 'Peachtree Med',
-    url: 'https://peachtreemed.com',
-    category: 'Healthcare & Services',
-    description: 'Medical clinic services, physician directories and patient appointment workflows.',
-    role: 'Healthcare Portal Development & Accessibility',
-  },
   {
     name: 'Citiguard Security',
     url: 'https://citiguardsecurity.com',
