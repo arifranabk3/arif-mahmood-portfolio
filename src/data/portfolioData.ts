@@ -402,7 +402,7 @@ export const CLIENT_WEBSITES: ClientWebsite[] = [
     url: 'https://actlionsolutions.com',
     category: 'Business & Corporate',
     description: 'US-based IT delivery consultancy, network infrastructure deployment, and enterprise project advisory services.',
-    role: 'Custom Web Design, WordPress Development & Performance Optimization',
+    role: 'PHP / Laravel Full-Stack Development, Custom UI/UX & Performance Optimization',
   },
   {
     name: 'OVEX IT Solutions',
